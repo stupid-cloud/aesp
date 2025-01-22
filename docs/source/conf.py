@@ -16,15 +16,15 @@ release = 'v0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "deepmodeling_sphinx",
+    # "deepmodeling_sphinx",
     "dargs.sphinx",
-    "myst_parser",
+    # "myst_parser",
     "sphinx_book_theme",
-    "sphinx.ext.viewcode",
-    "sphinx.ext.intersphinx",
-    "numpydoc",
-    "sphinx.ext.autosummary",
-    "sphinxarg.ext",
+    # "sphinx.ext.viewcode",
+    # "sphinx.ext.intersphinx",
+    # "numpydoc",
+    # "sphinx.ext.autosummary",
+    # "sphinxarg.ext",
 ]
 
 templates_path = ['_templates']

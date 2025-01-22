@@ -19,8 +19,9 @@ dependencies = ["pyxtal", "pymatgen", "ase", "dpgen2", "art", "dpdispatcher", "d
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "aesp.rtfd.io"
-Homepage = "https://pymatsci.top"
+Documentation = "https://aesp.readthedocs.io/"
+Homepage = "https://github.com/stupid-cloud/aesp"
+Issues = "https://github.com/stupid-cloud/aesp/issues"
 
 [project.scripts]
 aesp = "aesp.entrypoint.main:main"
@@ -34,11 +35,7 @@ version = {attr = "aesp.__version__"}
 [project.optional-dependencies]
 docs = [
      'sphinx',
-     'recommonmark',
      'sphinx-book-theme',
-     'numpydoc',
-     'myst_parser',
-     'deepmodeling-sphinx>=0.3.0',
-     'sphinx-argparse<0.5.0',
      "dargs>=0.4.1",
+     "aesp"
 ]
