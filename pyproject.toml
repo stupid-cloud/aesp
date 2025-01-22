@@ -35,7 +35,7 @@ version = {attr = "aesp.__version__"}
 docs = [
      'sphinx',
      'recommonmark',
-     'sphinx_rtd_theme',
+     'sphinx-book-theme',
      'numpydoc',
      'myst_parser',
      'deepmodeling-sphinx>=0.3.0',
