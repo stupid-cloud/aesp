@@ -8,7 +8,7 @@
 import os 
 import sys
 project = 'AESP'
-copyright = '2024, C.L. Qin'
+copyright = '2025, C.L. Qin'
 author = 'C.L. Qin'
 release = 'v0'
 
@@ -16,15 +16,15 @@ release = 'v0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    "deepmodeling_sphinx",
+    # "deepmodeling_sphinx",
     "dargs.sphinx",
-    "myst_parser",
+    # "myst_parser",
     "sphinx_rtd_theme",
-    "sphinx.ext.viewcode",
-    "sphinx.ext.intersphinx",
-    "numpydoc",
-    "sphinx.ext.autosummary",
-    "sphinxarg.ext",
+    # "sphinx.ext.viewcode",
+    # "sphinx.ext.intersphinx",
+    # "numpydoc",
+    # "sphinx.ext.autosummary",
+    # "sphinxarg.ext",
 ]
 
 templates_path = ['_templates']
@@ -69,10 +69,10 @@ def run_apidoc(_):
 def setup(app):
     app.connect("builder-inited", run_apidoc)
 
-intersphinx_mapping = {
-    "python": ("https://docs.python.org/", None),
-    "numpy": ("https://docs.scipy.org/doc/numpy/", None),
-    "dargs": ("https://docs.deepmodeling.com/projects/dargs/en/latest/", None),
-    "dflow": ("https://deepmodeling.com/dflow/", None),
-    "dpdata": ("https://docs.deepmodeling.com/projects/dpdata/en/latest/", None),
-}
+# intersphinx_mapping = {
+#     "python": ("https://docs.python.org/", None),
+#     "numpy": ("https://docs.scipy.org/doc/numpy/", None),
+#     "dargs": ("https://docs.deepmodeling.com/projects/dargs/en/latest/", None),
+#     "dflow": ("https://deepmodeling.com/dflow/", None),
+#     "dpdata": ("https://docs.deepmodeling.com/projects/dpdata/en/latest/", None),
+# }

@@ -1,16 +1,1 @@
-Sphinx
-deepmodeling_sphinx
-sphinx-argparse
-sphinx-autobuild
-sphinx-markdown-tables
-sphinx-rtd-theme
-sphinxcontrib-applehelp
-sphinxcontrib-devhelp
-sphinxcontrib-htmlhelp
-sphinxcontrib-jquery
-sphinxcontrib-jsmath
-sphinxcontrib-qthelp
-sphinxcontrib-serializinghtml
 dargs
-myst-parser
-numpydoc
