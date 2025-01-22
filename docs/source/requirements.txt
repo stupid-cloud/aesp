@@ -3,3 +3,5 @@ dargs>=0.4.1
 numpydoc
 myst_parser
 sphinx-argparse<0.5.0
+recommonmark
+sphinx
