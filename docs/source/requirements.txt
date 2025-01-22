@@ -1,5 +1,5 @@
 sphinx_rtd_theme
-dargs
+dargs>=0.4.1
 numpydoc
 myst_parser
-sphinx-argparse
+sphinx-argparse<0.5.0
