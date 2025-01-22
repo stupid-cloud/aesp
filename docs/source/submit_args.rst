@@ -9,4 +9,4 @@ Arguments of the submit script
 
 .. dargs::
    :module: aesp.configs.inputs
-   :func: submit_args
+   :func: csp_base_config
