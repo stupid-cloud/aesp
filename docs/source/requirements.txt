@@ -1,2 +1,5 @@
 sphinx_rtd_theme
 dargs
+numpydoc
+myst_parser
+sphinx-argparse
