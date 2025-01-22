@@ -19,7 +19,7 @@ extensions = [
     # "deepmodeling_sphinx",
     "dargs.sphinx",
     # "myst_parser",
-    "sphinx_rtd_theme",
+    "sphinx_book_theme",
     # "sphinx.ext.viewcode",
     # "sphinx.ext.intersphinx",
     # "numpydoc",
