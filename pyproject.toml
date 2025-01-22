@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aesp"
+authors = [{name = "Chenglong Qin", email = "clqin@foxmail.com"}]
+
+maintainers = [{name = "Chenglong Qin", email = "clqin@foxmail.com"}]
+
+description = "aesp(Adaptive Evolutionary Structure Predictor) is a crystal structure prediction tool written in Python."
+
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["CSP", 'DL']
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = ["pyxtal>=0.5.3", "pymatgen", "ase"]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://pymatsci.top"
+Homepage = "https://pymatsci.top"
+
+[project.scripts]
+aesp = "aesp.entrypoint.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "aesp.__version__"}
+

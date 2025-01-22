@@ -1,0 +1,96 @@
+{
+	"mode": "st-csp",
+	"opt_algo" : {
+		"type" : "ea",
+		"generation" : {
+			"gen_size" : 30,
+			"adaptive" : {
+
+			}
+		},
+		"population" : {
+			"pop_size" : 25,
+			"diff_threshold" : 0.7,
+			"diff_change_ratio" : 0.2,
+			"adaptive" : {
+				
+			}	
+		},
+		"operator" : {
+			"generator" : {
+				"prob" : 0.3,
+				"random_gen_prob" : 1
+			},
+			"crossover" : {
+				"prob" : 0.3,
+				"plane_cross_prob" : 1
+			},
+			"mutation" : {
+				"prob" : 0.4,
+				"continuous_mut_factor" : 2, 
+				"strain_mut_prob" : 0.3,
+				"permutation_mut_prob" : 0.3,
+				"rattle_mut_prob" : 0.4
+			},
+			"adaptive" : {
+				"type": "adjustment",
+				"use_recent_gen" : 2
+			}
+		},	
+		"cvg_criterion" : {
+			"max_gen_num" : 20,
+			"min_pop_diversity" : null,
+			"continuous_opt_num" : null
+		}
+		
+	},
+
+	"search_space" : {
+		"species" : {"Cl": 8, "Na": 8},
+		"spgnum" : ["1-230"],
+		"_spgnum" : "sgpnum默认为所有晶系(1-230)"
+	},
+	
+	"calc_stages" : [
+		{
+			"type" : "matgl",
+			"task_max" : 1,
+			"pstress" : 0.0,
+			"inputs_config" : {
+           		"relax_cell" : true,
+            	"step_max" : 5000,
+           		"f_max" : 0.05,
+            	"model" : "M3GNet-MP-2021.2.8-PES"
+			},
+			"run_config" : {
+				"command" : "python"
+			}
+		}
+	],
+
+	"dflow_config" : {
+		"mode" : "debug"
+	},
+
+	"dflow_s3_config" : {},
+
+	"default_step_config" : {
+		"template_config" : {
+			"image" : "dpgen2:master",
+			"_comment" : "all"
+		},
+		"executor" : {
+			"type" : "dispatcher",
+			"image_pull_policy" : "IfNotPresent",
+			"machine_dict" : {
+				"batch_type" : "Shell",
+				"context_type" : "local",
+				"local_root" : "./",
+				"remote_root" : "./works"
+			}
+		}
+    },
+
+	"step_configs" : {}
+	
+}
