@@ -13,3 +13,4 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 dargs
 myst-parser
+numpydoc
