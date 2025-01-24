@@ -20,6 +20,7 @@ extensions = [
     "dargs.sphinx",
     # "myst_parser",
     "sphinx_book_theme",
+    "myst_nb",
     # "sphinx.ext.viewcode",
     # "sphinx.ext.intersphinx",
     # "numpydoc",

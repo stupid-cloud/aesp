@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>aesp.utils package &#8212; AESP v0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=c6c710fd"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/aesp.utils';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP v0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start.html">3. Quick Start Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">3. Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_script.html">4. Guide on writing input scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_args.html">5. Arguments of the input script</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../example.html">1. Classfication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">1. Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/aesp.utils.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>aesp.utils package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.deepmd">aesp.utils.deepmd module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.dispatcher">aesp.utils.dispatcher module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.dispatcher.make_submission"><code class="docutils literal notranslate"><span class="pre">make_submission()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.plotly_graph">aesp.utils.plotly_graph module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_con_mut_factor"><code class="docutils literal notranslate"><span class="pre">draw_con_mut_factor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_diversity"><code class="docutils literal notranslate"><span class="pre">draw_diversity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_ea"><code class="docutils literal notranslate"><span class="pre">draw_ea()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_prob"><code class="docutils literal notranslate"><span class="pre">draw_prob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_size"><code class="docutils literal notranslate"><span class="pre">draw_size()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.run_command">aesp.utils.run_command module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.run_command.run_command"><code class="docutils literal notranslate"><span class="pre">run_command()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.tool">aesp.utils.tool module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.create_symlinks"><code class="docutils literal notranslate"><span class="pre">create_symlinks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.expand_idx"><code class="docutils literal notranslate"><span class="pre">expand_idx()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.format_ranges"><code class="docutils literal notranslate"><span class="pre">format_ranges()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.get_kpoints"><code class="docutils literal notranslate"><span class="pre">get_kpoints()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.print_in_box"><code class="docutils literal notranslate"><span class="pre">print_in_box()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-aesp.utils">
+<span id="aesp-utils-package"></span><h1>aesp.utils package<a class="headerlink" href="#module-aesp.utils" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-aesp.utils.deepmd">
+<span id="aesp-utils-deepmd-module"></span><h2>aesp.utils.deepmd module<a class="headerlink" href="#module-aesp.utils.deepmd" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-aesp.utils.dispatcher">
+<span id="aesp-utils-dispatcher-module"></span><h2>aesp.utils.dispatcher module<a class="headerlink" href="#module-aesp.utils.dispatcher" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.dispatcher.make_submission">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.dispatcher.</span></span><span class="sig-name descname"><span class="pre">make_submission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdata_machine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mdata_resources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forward_common_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forward_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backward_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errlog</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.dispatcher.make_submission" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.utils.plotly_graph">
+<span id="aesp-utils-plotly-graph-module"></span><h2>aesp.utils.plotly_graph module<a class="headerlink" href="#module-aesp.utils.plotly_graph" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.plotly_graph.draw_con_mut_factor">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.plotly_graph.</span></span><span class="sig-name descname"><span class="pre">draw_con_mut_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuos_mut_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.plotly_graph.draw_con_mut_factor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.plotly_graph.draw_diversity">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.plotly_graph.</span></span><span class="sig-name descname"><span class="pre">draw_diversity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.plotly_graph.draw_diversity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.plotly_graph.draw_ea">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.plotly_graph.</span></span><span class="sig-name descname"><span class="pre">draw_ea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.plotly_graph.draw_ea" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.plotly_graph.draw_prob">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.plotly_graph.</span></span><span class="sig-name descname"><span class="pre">draw_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.plotly_graph.draw_prob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.plotly_graph.draw_size">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.plotly_graph.</span></span><span class="sig-name descname"><span class="pre">draw_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.plotly_graph.draw_size" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.utils.run_command">
+<span id="aesp-utils-run-command-module"></span><h2>aesp.utils.run_command module<a class="headerlink" href="#module-aesp.utils.run_command" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.run_command.run_command">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.run_command.</span></span><span class="sig-name descname"><span class="pre">run_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aesp.utils.run_command.run_command" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.utils.tool">
+<span id="aesp-utils-tool-module"></span><h2>aesp.utils.tool module<a class="headerlink" href="#module-aesp.utils.tool" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.tool.create_symlinks">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.tool.</span></span><span class="sig-name descname"><span class="pre">create_symlinks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.tool.create_symlinks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.tool.expand_idx">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.tool.</span></span><span class="sig-name descname"><span class="pre">expand_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.tool.expand_idx" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.tool.format_ranges">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.tool.</span></span><span class="sig-name descname"><span class="pre">format_ranges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.tool.format_ranges" title="Link to this definition">#</a></dt>
+<dd><p>status格式化使用</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.tool.get_kpoints">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.tool.</span></span><span class="sig-name descname"><span class="pre">get_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kppa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.tool.get_kpoints" title="Link to this definition">#</a></dt>
+<dd><p>kpoints产生</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.utils.tool.print_in_box">
+<span class="sig-prename descclassname"><span class="pre">aesp.utils.tool.</span></span><span class="sig-name descname"><span class="pre">print_in_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.utils.tool.print_in_box" title="Link to this definition">#</a></dt>
+<dd><p>将给定文本打印在一个框内，能处理文本中的制表符和换行符，并自动进行合适的排版。</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.deepmd">aesp.utils.deepmd module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.dispatcher">aesp.utils.dispatcher module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.dispatcher.make_submission"><code class="docutils literal notranslate"><span class="pre">make_submission()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.plotly_graph">aesp.utils.plotly_graph module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_con_mut_factor"><code class="docutils literal notranslate"><span class="pre">draw_con_mut_factor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_diversity"><code class="docutils literal notranslate"><span class="pre">draw_diversity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_ea"><code class="docutils literal notranslate"><span class="pre">draw_ea()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_prob"><code class="docutils literal notranslate"><span class="pre">draw_prob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.plotly_graph.draw_size"><code class="docutils literal notranslate"><span class="pre">draw_size()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.run_command">aesp.utils.run_command module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.run_command.run_command"><code class="docutils literal notranslate"><span class="pre">run_command()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.utils.tool">aesp.utils.tool module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.create_symlinks"><code class="docutils literal notranslate"><span class="pre">create_symlinks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.expand_idx"><code class="docutils literal notranslate"><span class="pre">expand_idx()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.format_ranges"><code class="docutils literal notranslate"><span class="pre">format_ranges()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.get_kpoints"><code class="docutils literal notranslate"><span class="pre">get_kpoints()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.utils.tool.print_in_box"><code class="docutils literal notranslate"><span class="pre">print_in_box()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

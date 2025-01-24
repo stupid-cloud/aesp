@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Guide on writing input scripts &#8212; AESP v0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c6c710fd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'input_script';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Arguments of the input script" href="input_args.html" />
+    <link rel="prev" title="3. Command line interface" href="cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP v0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">3. Quick Start Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">3. Command line interface</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Guide on writing input scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_args.html">5. Arguments of the input script</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="example.html">1. Classfication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citations.html">1. Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/input_script.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Guide on writing input scripts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-script-for-all-aesp-commands">4.1. The input script for all aesp commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-script-for-submit-or-resubmit-commands">4.2. The input script for submit or resubmit commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.2.1. 常规模式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#std">4.2.1.1. std</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">4.2.1.2. pool</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.2. 主动学习</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="guide-on-writing-input-scripts">
+<span id="input-script"></span><h1><span class="section-number">4. </span>Guide on writing input scripts<a class="headerlink" href="#guide-on-writing-input-scripts" title="Link to this heading">#</a></h1>
+<p>如果你熟悉 <a class="reference external" href="https://docs.deepmodeling.com/projects/dpgen2">dpgen2</a>，就能很容易理解下面的内容。反之如果你理解了下面的内容就容易上手dpgen2了.
+The reader of this doc is assumed to be familiar with the 自适应进化算法 that the aesp implements.
+If not, one may check this <a class="reference external" href="https://docs.deepmodeling.com/projects/dpgen2">paper</a>.</p>
+<p>AESP的输入文件是json格式的文件，主要为三个个大部分，分别为dflow的配置文件（dflow_config，dflow_s3_config，default_step_config），
+以及aesp关于算法的一些配置（aesp_config）。</p>
+<section id="the-input-script-for-all-aesp-commands">
+<h2><span class="section-number">4.1. </span>The input script for all aesp commands<a class="headerlink" href="#the-input-script-for-all-aesp-commands" title="Link to this heading">#</a></h2>
+<p>For all the aesp commands, one need to provide <a class="reference external" href="https://github.com/deepmodeling/dflow">dflow</a> global configurations.
+一般情况下设置为以下模式：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;dflow_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;mode&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;debug&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="nt">&quot;dflow_s3_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p>The aesp simply pass all keys of “dflow_config” to dflow.config and all keys of “dflow_s3_config” to dflow.s3_config.</p>
+</section>
+<section id="the-input-script-for-submit-or-resubmit-commands">
+<h2><span class="section-number">4.2. </span>The input script for submit or resubmit commands<a class="headerlink" href="#the-input-script-for-submit-or-resubmit-commands" title="Link to this heading">#</a></h2>
+<p>aesp_config主要有两种模式，一种是常规的遗传算法结构预测流程,利用经验势、量子力学计算以及已经训练好的机器学习势函数进行结构预测;
+另一种是使用主动学习和机器学习势相结合的方式，可以在结构预测的同时训练相应的机器学习势函数，加快预测的效率。指定模式可以输入如下：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;std-csp&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>首先是优化算法的一些参数设置。进化算法也设置了两种方式，包括传统方式，也就是结构随每一代的进化而更新，另一种是所有的结构都带进程池中，
+没有代的概念。</p>
+<section id="id1">
+<h3><span class="section-number">4.2.1. </span>常规模式<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>完整的输入文件可以在这里下载。</p>
+<section id="std">
+<h4><span class="section-number">4.2.1.1. </span>std<a class="headerlink" href="#std" title="Link to this heading">#</a></h4>
+<p>首先是种群以及代的参数</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;opt_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;generation&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;gen_size&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;adaptive&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rca&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;size_change_ratio&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;population&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;pop_size&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;adaptive&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rca&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;size_change_ratio&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">generation</span></code> 和 <code class="docutils literal notranslate"><span class="pre">population</span></code> 的参数基本是一致的，但我们最好保持 <code class="docutils literal notranslate"><span class="pre">population</span></code> 的 <code class="docutils literal notranslate"><span class="pre">size</span></code> 要大于 <code class="docutils literal notranslate"><span class="pre">generation</span></code> 的；
+其中 <code class="docutils literal notranslate"><span class="pre">adptive</span></code> 是自适应的参数，也有两种方式。两种方式的参数是一样的都只有 <code class="docutils literal notranslate"><span class="pre">size_change_ratio</span></code>，代表了 <code class="docutils literal notranslate"><span class="pre">size``的变化比例；</span>
+<span class="pre">比如</span> <span class="pre">``size</span></code> 为50, 则 <code class="docutils literal notranslate"><span class="pre">size</span></code> 的变化范围为[50*(1-0.5), 50*(1+0.5)]</p>
+<p>其次是一些操作符的参数</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;opt_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;std&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;operator&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bulk&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;generator&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;random_gen_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;random_gen_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;composition&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;B&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;C&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;_spgnum&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;1-230&quot;</span><span class="p">],</span>
+<span class="w">                    </span><span class="nt">&quot;factor&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_thickness&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;crossover&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;plane_cross_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.333</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;sphere_cross_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.333</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cylinder_cross_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.334</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;plane_cross_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;stddev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;sphere_cross_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;cylinder_cross_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;mutation&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;continuous_mut_factor&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;strain_mut_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.333</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;permutation_mut_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.333</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;ripple_mut_prob&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.334</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;strain_mut_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;stddev&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;permutation_mut_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;ripple_mut_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;max_count&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;rho&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;miu&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;eta&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;adaptive&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;adjustment&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;use_recent_gen&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;hard_constrains&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;alpha&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;beta&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;gamma&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;chi&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;psi&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;phi&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;a&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;b&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;c&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;tol_matrix&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_tuples&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;Cl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Na&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Cl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cl&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Na&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Na&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">]],</span>
+<span class="w">                    </span><span class="nt">&quot;prototype&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;atomic&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;factor&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">operator</span></code> 根据不同的体系包含了多种模式，分别有bulk,cluster. <code class="docutils literal notranslate"><span class="pre">operator</span></code> 包含了三种方式，分别是
+<code class="docutils literal notranslate"><span class="pre">generator</span></code>, <code class="docutils literal notranslate"><span class="pre">mutation</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">crossover</span></code>.下面的 <code class="docutils literal notranslate"><span class="pre">adaptive</span></code> 指的是三种操作符的自适应参数。
+其中 <code class="docutils literal notranslate"><span class="pre">type</span></code> 有两种方式。 <code class="docutils literal notranslate"><span class="pre">hard_constrains</span></code> 代表了对每种操作符生成结构的一些约束。包含了对晶格的一些角度（包括二面角）以及晶格常量
+的一些限制； <code class="docutils literal notranslate"><span class="pre">tol_matrix</span></code> 是对原子间距离的一些限制。 <code class="docutils literal notranslate"><span class="pre">generator</span></code>, <code class="docutils literal notranslate"><span class="pre">mutation</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">crossover</span></code> 里面的 <code class="docutils literal notranslate"><span class="pre">prob</span></code> 代表了选择该方式的概率，并且三者的概率和为1.每个操作符又分别有不同的操作模式，
+他们的概率分别为 <code class="docutils literal notranslate"><span class="pre">xxx_gen_prob</span></code> （和为1）, <code class="docutils literal notranslate"><span class="pre">xxx_mut_prob</span></code> （和为1） 以及 <code class="docutils literal notranslate"><span class="pre">xxx_cross_prob</span></code> （和为1）. 并且 <code class="docutils literal notranslate"><span class="pre">xxx_xxx_params</span></code>
+对应相应操作的一些参数。</p>
+<p>同时我们需要定义算法的收敛条件，也就是 <code class="docutils literal notranslate"><span class="pre">cvg_criterion</span></code> .</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;opt_params&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;cvg_criterion&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;max_gen_num&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;continuous_opt_num&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>我们还需要明确每个结构的计算方式</p>
+<p>The execution units of the aesp are the dflow Steps. How each step is executed is defined by the “step_configs”.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;step_configs&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The configs for prepare training, run training, prepare exploration, run exploration, prepare fp,
+run fp, select configurations, collect data and concurrent learning steps are given correspondingly.</p>
+<p>Any of the config in the “step_configs” can be ommitted. If so, the configs of the step is set to the
+default step configs, which is provided by the following section, for example,</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;aesp_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;default_step_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;template_slice_config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;group_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;pool_size&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;executor&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dispatcher&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;host&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_pull_policy&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;username&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;clqin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;password&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;clqin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;machine_dict&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;batch_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shell&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;context_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;local_root&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;remote_root&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/zhao/work&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;resources_dict&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;cpu_per_node&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;gpu_per_node&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;group_size&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The way of writing the “default_step_config” is the same as any step config in the “step_configs”.</p>
+</section>
+<section id="pool">
+<h4><span class="section-number">4.2.1.2. </span>pool<a class="headerlink" href="#pool" title="Link to this heading">#</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>还在开发中</p>
+</div>
+</section>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.2.2. </span>主动学习<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>还在测试中</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Command line interface</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="input_args.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Arguments of the input script</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-script-for-all-aesp-commands">4.1. The input script for all aesp commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-script-for-submit-or-resubmit-commands">4.2. The input script for submit or resubmit commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.2.1. 常规模式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#std">4.2.1.1. std</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">4.2.1.2. pool</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.2. 主动学习</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
