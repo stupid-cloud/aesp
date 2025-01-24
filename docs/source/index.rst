@@ -42,6 +42,7 @@ C.L. Qin (clqin@foxmail.com)
    :numbered:
    :caption: Advanced Guide
 
+   background
    quick_cli
    cli
    input_script
