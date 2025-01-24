@@ -5,27 +5,45 @@ Installation
 Requirements
 ============
 
-- python 
-- pymatgen
-- ase
-- dscribe
+- miniconda
+- python3.10 
+
 
 Installation
 ============
 
-1.To use AESP, first install pymatgen and numpy using pip:
+.. important::
+
+   To use AESP, first install miniconda_:
+
+.. _miniconda: https://docs.anaconda.com/miniconda/install/
+
+如果已经安装好miniconda，就可以安装相应版本的python环境（只能是python3.10版本）并激活。
 
 .. code:: console
 
-   pip install numpy
-   pip install pymatgen
+   conda create -n aesp python==3.10
+   conda activate aesp
 
-2.Install AESP
+To install AESP, 这里有两种可选的方式。\
 
-.. code:: python
+[1] one can simply type
 
+.. code:: console
+   
    pip install aesp
 
-In addition, you can also visit `pypi`_ to download.
+[2] or make a copy of the source code, and then install it manually.
 
-.. _pypi: https://pypi.org/project/aesp/
+.. code:: console
+
+   git clone https://github.com/stupid-cloud/aesp.git
+   cd aesp
+   pip install ./
+
+如果你已经安装好aesp，可以尝试输入 ``aesp -v`` 查看当前的版本。You expect to see the following output.
+
+.. code:: console
+   
+   aesp v2024.8.4
+

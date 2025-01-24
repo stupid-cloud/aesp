@@ -24,7 +24,7 @@ extensions = [
     # "sphinx.ext.intersphinx",
     # "numpydoc",
     # "sphinx.ext.autosummary",
-    # "sphinxarg.ext",
+    "sphinxarg.ext"
 ]
 
 templates_path = ['_templates']

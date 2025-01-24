@@ -26,16 +26,38 @@ AESP v0.0
 Contributors
 ------------
 
-C.L. Qin
+C.L. Qin (clqin@foxmail.com)
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :numbered:
-   :caption: Contents:
+   :caption: Basic Guide
 
-   introduction/index
    install
+   quick_start
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :caption: Advanced Guide
+
+   quick_cli
+   cli
+   input_script
+   input_args
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :caption: Examples
+
+   example
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :caption: Citations
+
    citations
-   submit_args
 
