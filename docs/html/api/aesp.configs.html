@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>aesp.configs package &#8212; AESP v0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=c6c710fd"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/aesp.configs';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP v0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start.html">3. Quick Start Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">3. Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_script.html">4. Guide on writing input scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_args.html">5. Arguments of the input script</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../example.html">1. Classfication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">1. Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/aesp.configs.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>aesp.configs package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.inputs">aesp.configs.inputs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.alcsp_config"><code class="docutils literal notranslate"><span class="pre">alcsp_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.csp_base_config"><code class="docutils literal notranslate"><span class="pre">csp_base_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.input_config"><code class="docutils literal notranslate"><span class="pre">input_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.input_varint"><code class="docutils literal notranslate"><span class="pre">input_varint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.stdcsp_config"><code class="docutils literal notranslate"><span class="pre">stdcsp_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.opt_params">aesp.configs.opt_params module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.cvg_criterion_confg"><code class="docutils literal notranslate"><span class="pre">cvg_criterion_confg()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">generation_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_config"><code class="docutils literal notranslate"><span class="pre">generation_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_rca_config"><code class="docutils literal notranslate"><span class="pre">generation_rca_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.operator_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">operator_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.operator_variant"><code class="docutils literal notranslate"><span class="pre">operator_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.opt_params_variant"><code class="docutils literal notranslate"><span class="pre">opt_params_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">population_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_config"><code class="docutils literal notranslate"><span class="pre">population_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_rca_config"><code class="docutils literal notranslate"><span class="pre">population_rca_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.std_config"><code class="docutils literal notranslate"><span class="pre">std_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.stage">aesp.configs.stage module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.calc_stage_config"><code class="docutils literal notranslate"><span class="pre">calc_stage_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.calc_stages_variant"><code class="docutils literal notranslate"><span class="pre">calc_stages_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dp_dist_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_dist_train_args1()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dp_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_train_args1()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dpcsp_stages_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_stages_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.stage_stop_cond_config"><code class="docutils literal notranslate"><span class="pre">stage_stop_cond_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.variant_train1"><code class="docutils literal notranslate"><span class="pre">variant_train1()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.step">aesp.configs.step module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.base_step_config"><code class="docutils literal notranslate"><span class="pre">base_step_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.dpcsp_step_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_step_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.stcsp_step_config"><code class="docutils literal notranslate"><span class="pre">stcsp_step_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-aesp.configs">
+<span id="aesp-configs-package"></span><h1>aesp.configs package<a class="headerlink" href="#module-aesp.configs" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-aesp.configs.inputs">
+<span id="aesp-configs-inputs-module"></span><h2>aesp.configs.inputs module<a class="headerlink" href="#module-aesp.configs.inputs" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.inputs.alcsp_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.inputs.</span></span><span class="sig-name descname"><span class="pre">alcsp_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_step_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.inputs.alcsp_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.inputs.csp_base_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.inputs.</span></span><span class="sig-name descname"><span class="pre">csp_base_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.inputs.csp_base_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.inputs.input_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.inputs.</span></span><span class="sig-name descname"><span class="pre">input_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_step_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'continue_on_failed':</span> <span class="pre">False,</span> <span class="pre">'continue_on_num_success':</span> <span class="pre">None,</span> <span class="pre">'continue_on_success_ratio':</span> <span class="pre">None,</span> <span class="pre">'executor':</span> <span class="pre">None,</span> <span class="pre">'parallelism':</span> <span class="pre">None,</span> <span class="pre">'template_config':</span> <span class="pre">{'envs':</span> <span class="pre">None,</span> <span class="pre">'image':</span> <span class="pre">'dptechnology/dpgen2:latest',</span> <span class="pre">'retry_on_transient_error':</span> <span class="pre">None,</span> <span class="pre">'timeout':</span> <span class="pre">None,</span> <span class="pre">'timeout_as_transient_error':</span> <span class="pre">False}}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.inputs.input_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.inputs.input_varint">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.inputs.</span></span><span class="sig-name descname"><span class="pre">input_varint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_step_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.inputs.input_varint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.inputs.stdcsp_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.inputs.</span></span><span class="sig-name descname"><span class="pre">stdcsp_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_step_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.inputs.stdcsp_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.configs.opt_params">
+<span id="aesp-configs-opt-params-module"></span><h2>aesp.configs.opt_params module<a class="headerlink" href="#module-aesp.configs.opt_params" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.cvg_criterion_confg">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">cvg_criterion_confg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.cvg_criterion_confg" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.generation_adaptive_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">generation_adaptive_variant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.generation_adaptive_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.generation_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">generation_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.generation_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.generation_rca_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">generation_rca_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.generation_rca_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.operator_adaptive_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">operator_adaptive_variant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.operator_adaptive_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.operator_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">operator_variant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.operator_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.opt_params_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">opt_params_variant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.opt_params_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.population_adaptive_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">population_adaptive_variant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.population_adaptive_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.population_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">population_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.population_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.population_rca_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">population_rca_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.population_rca_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.opt_params.std_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.opt_params.</span></span><span class="sig-name descname"><span class="pre">std_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.opt_params.std_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.configs.stage">
+<span id="aesp-configs-stage-module"></span><h2>aesp.configs.stage module<a class="headerlink" href="#module-aesp.configs.stage" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.calc_stage_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">calc_stage_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.calc_stage_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.calc_stages_variant">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">calc_stages_variant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.calc_stages_variant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.dp_dist_train_args1">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">dp_dist_train_args1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.dp_dist_train_args1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.dp_train_args1">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">dp_train_args1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.dp_train_args1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.dpcsp_stages_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">dpcsp_stages_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.dpcsp_stages_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.stage_stop_cond_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">stage_stop_cond_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.stage_stop_cond_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.stage.variant_train1">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.stage.</span></span><span class="sig-name descname"><span class="pre">variant_train1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.stage.variant_train1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aesp.configs.step">
+<span id="aesp-configs-step-module"></span><h2>aesp.configs.step module<a class="headerlink" href="#module-aesp.configs.step" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.step.base_step_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.step.</span></span><span class="sig-name descname"><span class="pre">base_step_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.step.base_step_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.step.dpcsp_step_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.step.</span></span><span class="sig-name descname"><span class="pre">dpcsp_step_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.step.dpcsp_step_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aesp.configs.step.stcsp_step_config">
+<span class="sig-prename descclassname"><span class="pre">aesp.configs.step.</span></span><span class="sig-name descname"><span class="pre">stcsp_step_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aesp.configs.step.stcsp_step_config" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.inputs">aesp.configs.inputs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.alcsp_config"><code class="docutils literal notranslate"><span class="pre">alcsp_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.csp_base_config"><code class="docutils literal notranslate"><span class="pre">csp_base_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.input_config"><code class="docutils literal notranslate"><span class="pre">input_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.input_varint"><code class="docutils literal notranslate"><span class="pre">input_varint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.inputs.stdcsp_config"><code class="docutils literal notranslate"><span class="pre">stdcsp_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.opt_params">aesp.configs.opt_params module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.cvg_criterion_confg"><code class="docutils literal notranslate"><span class="pre">cvg_criterion_confg()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">generation_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_config"><code class="docutils literal notranslate"><span class="pre">generation_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.generation_rca_config"><code class="docutils literal notranslate"><span class="pre">generation_rca_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.operator_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">operator_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.operator_variant"><code class="docutils literal notranslate"><span class="pre">operator_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.opt_params_variant"><code class="docutils literal notranslate"><span class="pre">opt_params_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">population_adaptive_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_config"><code class="docutils literal notranslate"><span class="pre">population_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.population_rca_config"><code class="docutils literal notranslate"><span class="pre">population_rca_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.opt_params.std_config"><code class="docutils literal notranslate"><span class="pre">std_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.stage">aesp.configs.stage module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.calc_stage_config"><code class="docutils literal notranslate"><span class="pre">calc_stage_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.calc_stages_variant"><code class="docutils literal notranslate"><span class="pre">calc_stages_variant()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dp_dist_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_dist_train_args1()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dp_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_train_args1()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.dpcsp_stages_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_stages_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.stage_stop_cond_config"><code class="docutils literal notranslate"><span class="pre">stage_stop_cond_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.stage.variant_train1"><code class="docutils literal notranslate"><span class="pre">variant_train1()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.configs.step">aesp.configs.step module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.base_step_config"><code class="docutils literal notranslate"><span class="pre">base_step_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.dpcsp_step_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_step_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aesp.configs.step.stcsp_step_config"><code class="docutils literal notranslate"><span class="pre">stcsp_step_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

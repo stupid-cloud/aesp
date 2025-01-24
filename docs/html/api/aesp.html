@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>aesp package &#8212; AESP v0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=c6c710fd"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/aesp';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP v0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start.html">3. Quick Start Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">3. Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_script.html">4. Guide on writing input scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../input_args.html">5. Arguments of the input script</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../example.html">1. Classfication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">1. Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/aesp.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>aesp package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.constant">aesp.constant module</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-aesp">
+<span id="aesp-package"></span><h1>aesp package<a class="headerlink" href="#module-aesp" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aesp.calculator.html">aesp.calculator package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.calculator.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.calculator.html#module-aesp.calculator.dpmd">aesp.calculator.dpmd module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.DpmdInputs"><code class="docutils literal notranslate"><span class="pre">DpmdInputs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.DpmdInputs.args"><code class="docutils literal notranslate"><span class="pre">DpmdInputs.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.DpmdInputs.incar_from_file"><code class="docutils literal notranslate"><span class="pre">DpmdInputs.incar_from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.DpmdInputs.incar_template"><code class="docutils literal notranslate"><span class="pre">DpmdInputs.incar_template</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.DpmdInputs.normalize_config"><code class="docutils literal notranslate"><span class="pre">DpmdInputs.normalize_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.PrepDpmd"><code class="docutils literal notranslate"><span class="pre">PrepDpmd</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.PrepDpmd.prep_task"><code class="docutils literal notranslate"><span class="pre">PrepDpmd.prep_task()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.RunDpmd"><code class="docutils literal notranslate"><span class="pre">RunDpmd</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.RunDpmd.args"><code class="docutils literal notranslate"><span class="pre">RunDpmd.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.RunDpmd.input_files"><code class="docutils literal notranslate"><span class="pre">RunDpmd.input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.RunDpmd.optional_input_files"><code class="docutils literal notranslate"><span class="pre">RunDpmd.optional_input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.dpmd.RunDpmd.run_task"><code class="docutils literal notranslate"><span class="pre">RunDpmd.run_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.calculator.html#module-aesp.calculator.gulp">aesp.calculator.gulp module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.GulpInputs"><code class="docutils literal notranslate"><span class="pre">GulpInputs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.GulpInputs.args"><code class="docutils literal notranslate"><span class="pre">GulpInputs.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.GulpInputs.from_file"><code class="docutils literal notranslate"><span class="pre">GulpInputs.from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.GulpInputs.normalize_config"><code class="docutils literal notranslate"><span class="pre">GulpInputs.normalize_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.PrepGulp"><code class="docutils literal notranslate"><span class="pre">PrepGulp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.PrepGulp.prep_task"><code class="docutils literal notranslate"><span class="pre">PrepGulp.prep_task()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp"><code class="docutils literal notranslate"><span class="pre">RunGulp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp.args"><code class="docutils literal notranslate"><span class="pre">RunGulp.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp.input_files"><code class="docutils literal notranslate"><span class="pre">RunGulp.input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp.optional_input_files"><code class="docutils literal notranslate"><span class="pre">RunGulp.optional_input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp.process_data"><code class="docutils literal notranslate"><span class="pre">RunGulp.process_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.gulp.RunGulp.run_task"><code class="docutils literal notranslate"><span class="pre">RunGulp.run_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.calculator.html#module-aesp.calculator.matgl">aesp.calculator.matgl module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.MatglInputs"><code class="docutils literal notranslate"><span class="pre">MatglInputs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.MatglInputs.args"><code class="docutils literal notranslate"><span class="pre">MatglInputs.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.MatglInputs.incar_from_file"><code class="docutils literal notranslate"><span class="pre">MatglInputs.incar_from_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.MatglInputs.incar_template"><code class="docutils literal notranslate"><span class="pre">MatglInputs.incar_template</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.MatglInputs.normalize_config"><code class="docutils literal notranslate"><span class="pre">MatglInputs.normalize_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.PrepMatgl"><code class="docutils literal notranslate"><span class="pre">PrepMatgl</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.PrepMatgl.prep_task"><code class="docutils literal notranslate"><span class="pre">PrepMatgl.prep_task()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl"><code class="docutils literal notranslate"><span class="pre">RunMatgl</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl.args"><code class="docutils literal notranslate"><span class="pre">RunMatgl.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl.input_files"><code class="docutils literal notranslate"><span class="pre">RunMatgl.input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl.optional_input_files"><code class="docutils literal notranslate"><span class="pre">RunMatgl.optional_input_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl.process_data"><code class="docutils literal notranslate"><span class="pre">RunMatgl.process_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.calculator.html#aesp.calculator.matgl.RunMatgl.run_task"><code class="docutils literal notranslate"><span class="pre">RunMatgl.run_task()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.configs.html">aesp.configs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.configs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.configs.html#module-aesp.configs.inputs">aesp.configs.inputs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.inputs.alcsp_config"><code class="docutils literal notranslate"><span class="pre">alcsp_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.inputs.csp_base_config"><code class="docutils literal notranslate"><span class="pre">csp_base_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.inputs.input_config"><code class="docutils literal notranslate"><span class="pre">input_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.inputs.input_varint"><code class="docutils literal notranslate"><span class="pre">input_varint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.inputs.stdcsp_config"><code class="docutils literal notranslate"><span class="pre">stdcsp_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.configs.html#module-aesp.configs.opt_params">aesp.configs.opt_params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.cvg_criterion_confg"><code class="docutils literal notranslate"><span class="pre">cvg_criterion_confg()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.generation_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">generation_adaptive_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.generation_config"><code class="docutils literal notranslate"><span class="pre">generation_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.generation_rca_config"><code class="docutils literal notranslate"><span class="pre">generation_rca_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.operator_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">operator_adaptive_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.operator_variant"><code class="docutils literal notranslate"><span class="pre">operator_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.opt_params_variant"><code class="docutils literal notranslate"><span class="pre">opt_params_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.population_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">population_adaptive_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.population_config"><code class="docutils literal notranslate"><span class="pre">population_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.population_rca_config"><code class="docutils literal notranslate"><span class="pre">population_rca_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.opt_params.std_config"><code class="docutils literal notranslate"><span class="pre">std_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.configs.html#module-aesp.configs.stage">aesp.configs.stage module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.calc_stage_config"><code class="docutils literal notranslate"><span class="pre">calc_stage_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.calc_stages_variant"><code class="docutils literal notranslate"><span class="pre">calc_stages_variant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.dp_dist_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_dist_train_args1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.dp_train_args1"><code class="docutils literal notranslate"><span class="pre">dp_train_args1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.dpcsp_stages_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_stages_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.stage_stop_cond_config"><code class="docutils literal notranslate"><span class="pre">stage_stop_cond_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.stage.variant_train1"><code class="docutils literal notranslate"><span class="pre">variant_train1()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.configs.html#module-aesp.configs.step">aesp.configs.step module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.step.base_step_config"><code class="docutils literal notranslate"><span class="pre">base_step_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.step.dpcsp_step_config"><code class="docutils literal notranslate"><span class="pre">dpcsp_step_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.configs.html#aesp.configs.step.stcsp_step_config"><code class="docutils literal notranslate"><span class="pre">stcsp_step_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.entrypoint.html">aesp.entrypoint package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.analysis">aesp.entrypoint.analysis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.analysis.analysis"><code class="docutils literal notranslate"><span class="pre">analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.analysis.csp_analysis"><code class="docutils literal notranslate"><span class="pre">csp_analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.analysis.dp_train_csp"><code class="docutils literal notranslate"><span class="pre">dp_train_csp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.analysis.process_generation"><code class="docutils literal notranslate"><span class="pre">process_generation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.download">aesp.entrypoint.download module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.download.download"><code class="docutils literal notranslate"><span class="pre">download()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.main">aesp.entrypoint.main module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.main.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.resubmit">aesp.entrypoint.resubmit module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.resubmit.resubmit_csp"><code class="docutils literal notranslate"><span class="pre">resubmit_csp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.resubmit.split_list"><code class="docutils literal notranslate"><span class="pre">split_list()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.status">aesp.entrypoint.status module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.status.status"><code class="docutils literal notranslate"><span class="pre">status()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.submit">aesp.entrypoint.submit module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.submit.submit_csp"><code class="docutils literal notranslate"><span class="pre">submit_csp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.submit.workflow_dpcsp"><code class="docutils literal notranslate"><span class="pre">workflow_dpcsp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.submit.workflow_stcsp"><code class="docutils literal notranslate"><span class="pre">workflow_stcsp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.entrypoint.html#module-aesp.entrypoint.watch">aesp.entrypoint.watch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.watch.update_finished_steps"><code class="docutils literal notranslate"><span class="pre">update_finished_steps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.entrypoint.html#aesp.entrypoint.watch.watch"><code class="docutils literal notranslate"><span class="pre">watch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.func.html">aesp.func package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.args_setup">aesp.func.args_setup module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.args_setup.args_setup"><code class="docutils literal notranslate"><span class="pre">args_setup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.database">aesp.func.database module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection"><code class="docutils literal notranslate"><span class="pre">DataConnection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.add_relaxed_stage"><code class="docutils literal notranslate"><span class="pre">DataConnection.add_relaxed_stage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.add_unrelaxed_candidate"><code class="docutils literal notranslate"><span class="pre">DataConnection.add_unrelaxed_candidate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_atoms"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_atoms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_candidates"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_candidates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_diversity"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_diversity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_energy_base_operator"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_energy_base_operator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_max_continuous_opt_num"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_max_continuous_opt_num()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_max_generation"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_max_generation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_max_stage"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_max_stage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_next_id"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_next_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_next_s_id"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_next_s_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_number_of_candidates"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_number_of_candidates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_param"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_param()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.get_participation_in_pairing"><code class="docutils literal notranslate"><span class="pre">DataConnection.get_participation_in_pairing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.is_duplicate"><code class="docutils literal notranslate"><span class="pre">DataConnection.is_duplicate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.database.DataConnection.update_population"><code class="docutils literal notranslate"><span class="pre">DataConnection.update_population()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.entrypoint_func">aesp.func.entrypoint_func module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.change_logger"><code class="docutils literal notranslate"><span class="pre">change_logger()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.config_check"><code class="docutils literal notranslate"><span class="pre">config_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.get_last_step"><code class="docutils literal notranslate"><span class="pre">get_last_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.get_step_dict"><code class="docutils literal notranslate"><span class="pre">get_step_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.get_step_list"><code class="docutils literal notranslate"><span class="pre">get_step_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.print_citation"><code class="docutils literal notranslate"><span class="pre">print_citation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.print_logo"><code class="docutils literal notranslate"><span class="pre">print_logo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.entrypoint_func.write_input"><code class="docutils literal notranslate"><span class="pre">write_input()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.population">aesp.func.population module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.population.Population"><code class="docutils literal notranslate"><span class="pre">Population</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.population.Population.get_candidates"><code class="docutils literal notranslate"><span class="pre">Population.get_candidates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.population.Population.get_diversity"><code class="docutils literal notranslate"><span class="pre">Population.get_diversity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.population.count_looks_like"><code class="docutils literal notranslate"><span class="pre">count_looks_like()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.population.get_raw_score"><code class="docutils literal notranslate"><span class="pre">get_raw_score()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.scheduler">aesp.func.scheduler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.DPScheduler"><code class="docutils literal notranslate"><span class="pre">DPScheduler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.DPScheduler.next_stage"><code class="docutils literal notranslate"><span class="pre">DPScheduler.next_stage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.DPScheduler.s_converged"><code class="docutils literal notranslate"><span class="pre">DPScheduler.s_converged</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.STScheduler"><code class="docutils literal notranslate"><span class="pre">STScheduler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.STScheduler.g_converged"><code class="docutils literal notranslate"><span class="pre">STScheduler.g_converged</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.STScheduler.next_generation"><code class="docutils literal notranslate"><span class="pre">STScheduler.next_generation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.STScheduler.next_stage"><code class="docutils literal notranslate"><span class="pre">STScheduler.next_stage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.scheduler.STScheduler.s_converged"><code class="docutils literal notranslate"><span class="pre">STScheduler.s_converged</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.func.html#module-aesp.func.traj_render">aesp.func.traj_render module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.func.html#aesp.func.traj_render.TrajRender"><code class="docutils literal notranslate"><span class="pre">TrajRender</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.func.html#aesp.func.traj_render.TrajRender.get_confs"><code class="docutils literal notranslate"><span class="pre">TrajRender.get_confs()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.gui.html">aesp.gui package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.gui.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.gui.html#aesp-gui-atoms-info-module">aesp.gui.atoms_info module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.gui.html#aesp-gui-gui-module">aesp.gui.gui module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.operator.html">aesp.operator package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.operator.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.operator.crossover.html">aesp.operator.crossover package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.crossover.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.crossover.html#module-aesp.operator.crossover.base">aesp.operator.crossover.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.crossover.html#module-aesp.operator.crossover.cylinder">aesp.operator.crossover.cylinder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.crossover.html#module-aesp.operator.crossover.plane">aesp.operator.crossover.plane module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.crossover.html#module-aesp.operator.crossover.sphere">aesp.operator.crossover.sphere module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.operator.mutation.html">aesp.operator.mutation package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.mutation.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.mutation.html#module-aesp.operator.mutation.base">aesp.operator.mutation.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.mutation.html#module-aesp.operator.mutation.permutation">aesp.operator.mutation.permutation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.mutation.html#module-aesp.operator.mutation.ripple">aesp.operator.mutation.ripple module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.mutation.html#module-aesp.operator.mutation.strain">aesp.operator.mutation.strain module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.operator.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.operator.html#module-aesp.operator.base">aesp.operator.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.operator.html#aesp.operator.base.OperatorBase"><code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.operator.html#aesp.operator.base.OperatorBase.update_species"><code class="docutils literal notranslate"><span class="pre">OperatorBase.update_species()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.pyarmor_runtime_000000.html">aesp.pyarmor_runtime_000000 package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.pyarmor_runtime_000000.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.pyarmor_runtime_000000.html#module-aesp.pyarmor_runtime_000000.pyarmor_runtime">aesp.pyarmor_runtime_000000.pyarmor_runtime module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.structure.html">aesp.structure package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.structure.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.structure.html#module-aesp.structure.base">aesp.structure.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase"><code class="docutils literal notranslate"><span class="pre">StructBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.adjustment_config"><code class="docutils literal notranslate"><span class="pre">StructBase.adjustment_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.calc_fp_describe"><code class="docutils literal notranslate"><span class="pre">StructBase.calc_fp_describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.check_distance"><code class="docutils literal notranslate"><span class="pre">StructBase.check_distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.cylinder_cross_params_config"><code class="docutils literal notranslate"><span class="pre">StructBase.cylinder_cross_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.distribution_config"><code class="docutils literal notranslate"><span class="pre">StructBase.distribution_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.from_atoms"><code class="docutils literal notranslate"><span class="pre">StructBase.from_atoms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_by_crossover"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_by_crossover()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_by_generator"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_by_generator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_by_mutation"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_by_mutation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_by_seeds"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_by_seeds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_continuous_mutation"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_continuous_mutation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.gen_ea"><code class="docutils literal notranslate"><span class="pre">StructBase.gen_ea()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.get_fp_similarity"><code class="docutils literal notranslate"><span class="pre">StructBase.get_fp_similarity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.get_spg_info"><code class="docutils literal notranslate"><span class="pre">StructBase.get_spg_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.is_within_bounds"><code class="docutils literal notranslate"><span class="pre">StructBase.is_within_bounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.looks_like"><code class="docutils literal notranslate"><span class="pre">StructBase.looks_like()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.operator_adaptive_variant"><code class="docutils literal notranslate"><span class="pre">StructBase.operator_adaptive_variant()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.permutation_mut_params_config"><code class="docutils literal notranslate"><span class="pre">StructBase.permutation_mut_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.plane_cross_params_cofig"><code class="docutils literal notranslate"><span class="pre">StructBase.plane_cross_params_cofig()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.ripple_mut_params_config"><code class="docutils literal notranslate"><span class="pre">StructBase.ripple_mut_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.set_ea_params"><code class="docutils literal notranslate"><span class="pre">StructBase.set_ea_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.sphere_cross_params_cofig"><code class="docutils literal notranslate"><span class="pre">StructBase.sphere_cross_params_cofig()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.standardize_cell"><code class="docutils literal notranslate"><span class="pre">StructBase.standardize_cell()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.strain_mut_params_config"><code class="docutils literal notranslate"><span class="pre">StructBase.strain_mut_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.tol_matrix_config"><code class="docutils literal notranslate"><span class="pre">StructBase.tol_matrix_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.base.StructBase.update_species_order"><code class="docutils literal notranslate"><span class="pre">StructBase.update_species_order()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.structure.html#module-aesp.structure.bulk">aesp.structure.bulk module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk"><code class="docutils literal notranslate"><span class="pre">Bulk</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.args"><code class="docutils literal notranslate"><span class="pre">Bulk.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.calc_fp_describe"><code class="docutils literal notranslate"><span class="pre">Bulk.calc_fp_describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.crossover_config"><code class="docutils literal notranslate"><span class="pre">Bulk.crossover_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.generator_config"><code class="docutils literal notranslate"><span class="pre">Bulk.generator_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.hard_constrains_config"><code class="docutils literal notranslate"><span class="pre">Bulk.hard_constrains_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.mutation_config"><code class="docutils literal notranslate"><span class="pre">Bulk.mutation_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.random_gen_params_config"><code class="docutils literal notranslate"><span class="pre">Bulk.random_gen_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.random_move"><code class="docutils literal notranslate"><span class="pre">Bulk.random_move()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.random_rotation"><code class="docutils literal notranslate"><span class="pre">Bulk.random_rotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.bulk.Bulk.set_ea_params"><code class="docutils literal notranslate"><span class="pre">Bulk.set_ea_params()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.structure.html#module-aesp.structure.cluster">aesp.structure.cluster module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster"><code class="docutils literal notranslate"><span class="pre">Cluster</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.add_cell"><code class="docutils literal notranslate"><span class="pre">Cluster.add_cell()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.args"><code class="docutils literal notranslate"><span class="pre">Cluster.args()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.calc_fp_describe"><code class="docutils literal notranslate"><span class="pre">Cluster.calc_fp_describe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.crossover_config"><code class="docutils literal notranslate"><span class="pre">Cluster.crossover_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.gen_by_crossover"><code class="docutils literal notranslate"><span class="pre">Cluster.gen_by_crossover()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.gen_by_generator"><code class="docutils literal notranslate"><span class="pre">Cluster.gen_by_generator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.gen_by_mutation"><code class="docutils literal notranslate"><span class="pre">Cluster.gen_by_mutation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.gen_by_seeds"><code class="docutils literal notranslate"><span class="pre">Cluster.gen_by_seeds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.generator_config"><code class="docutils literal notranslate"><span class="pre">Cluster.generator_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.get_spg_info"><code class="docutils literal notranslate"><span class="pre">Cluster.get_spg_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.hard_constrains_config"><code class="docutils literal notranslate"><span class="pre">Cluster.hard_constrains_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.mutation_config"><code class="docutils literal notranslate"><span class="pre">Cluster.mutation_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.random_gen_params_config"><code class="docutils literal notranslate"><span class="pre">Cluster.random_gen_params_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.random_rotation"><code class="docutils literal notranslate"><span class="pre">Cluster.random_rotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.reset_positions"><code class="docutils literal notranslate"><span class="pre">Cluster.reset_positions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="aesp.structure.html#aesp.structure.cluster.Cluster.set_ea_params"><code class="docutils literal notranslate"><span class="pre">Cluster.set_ea_params()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.structure.html#module-aesp.structure.layer">aesp.structure.layer module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.utils.html">aesp.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#module-aesp.utils.deepmd">aesp.utils.deepmd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#module-aesp.utils.dispatcher">aesp.utils.dispatcher module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.dispatcher.make_submission"><code class="docutils literal notranslate"><span class="pre">make_submission()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#module-aesp.utils.plotly_graph">aesp.utils.plotly_graph module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.plotly_graph.draw_con_mut_factor"><code class="docutils literal notranslate"><span class="pre">draw_con_mut_factor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.plotly_graph.draw_diversity"><code class="docutils literal notranslate"><span class="pre">draw_diversity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.plotly_graph.draw_ea"><code class="docutils literal notranslate"><span class="pre">draw_ea()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.plotly_graph.draw_prob"><code class="docutils literal notranslate"><span class="pre">draw_prob()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.plotly_graph.draw_size"><code class="docutils literal notranslate"><span class="pre">draw_size()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#module-aesp.utils.run_command">aesp.utils.run_command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.run_command.run_command"><code class="docutils literal notranslate"><span class="pre">run_command()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aesp.utils.html#module-aesp.utils.tool">aesp.utils.tool module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.tool.create_symlinks"><code class="docutils literal notranslate"><span class="pre">create_symlinks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.tool.expand_idx"><code class="docutils literal notranslate"><span class="pre">expand_idx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.tool.format_ranges"><code class="docutils literal notranslate"><span class="pre">format_ranges()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.tool.get_kpoints"><code class="docutils literal notranslate"><span class="pre">get_kpoints()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aesp.utils.html#aesp.utils.tool.print_in_box"><code class="docutils literal notranslate"><span class="pre">print_in_box()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aesp.workflow.html">aesp.workflow package</a></li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-aesp.constant">
+<span id="aesp-constant-module"></span><h2>aesp.constant module<a class="headerlink" href="#module-aesp.constant" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-aesp.constant">aesp.constant module</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
