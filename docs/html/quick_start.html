@@ -1,0 +1,1559 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Quick Start Tutorial &#8212; AESP v0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=c6c710fd"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quick_start';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Theoretical Background" href="background.html" />
+    <link rel="prev" title="2. Installation" href="install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AESP v0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Quick Start Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="background.html">1. Theoretical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_cli.html">2. Guide on aesp commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">3. Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_script.html">4. Guide on writing input scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_args.html">5. Arguments of the input script</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="example.html">1. Classfication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Citations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citations.html">1. Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/quick_start.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quick Start Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3.2. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">3.3. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3.3.1. Data Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-input-script">3.3.2. Prepare input script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-model">3.3.3. Train a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freeze-a-model">3.3.4. Freeze a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-a-model">3.3.5. Compress a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-a-model">3.3.6. Test a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-md-with-lammps">3.3.7. Run MD with LAMMPS</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quick-start-tutorial">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">3. </span>Quick Start Tutorial</a><a class="headerlink" href="#quick-start-tutorial" title="Link to this heading">#</a></h1>
+<p><strong>This is a quick start guide for structure prediction using AESP, through which you can quickly understand the paradigm cycle that AESP operates in and apply it to your projects.</strong></p>
+<section id="task">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">3.1. </span>Task</a><a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><em><strong>Mastering the paradigm cycle of using AESP 进行结构预测, and following a complete case to learn how to apply it to 结构预测.</strong></em></p>
+</div></blockquote>
+<p>By the end of this tutorial, you will be able to:</p>
+<ul class="simple">
+<li><p>准备AESP的输入文件</p></li>
+<li><p>熟悉AESP的结构预测流程</p></li>
+</ul>
+<p>Work through this tutorial. It will take you 20 minutes, max!</p>
+<nav class="contents" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#quick-start-tutorial" id="id1">Quick Start Tutorial</a></p>
+<ul>
+<li><p><a class="reference internal" href="#task" id="id2">Task</a></p></li>
+<li><p><a class="reference internal" href="#background" id="id3">Background</a></p></li>
+<li><p><a class="reference internal" href="#practice" id="id4">Practice</a></p>
+<ul>
+<li><p><a class="reference internal" href="#data-preparation" id="id5">Data Preparation</a></p></li>
+<li><p><a class="reference internal" href="#prepare-input-script" id="id6">Prepare input script</a></p></li>
+<li><p><a class="reference internal" href="#train-a-model" id="id7">Train a model</a></p></li>
+<li><p><a class="reference internal" href="#freeze-a-model" id="id8">Freeze a model</a></p></li>
+<li><p><a class="reference internal" href="#compress-a-model" id="id9">Compress a model</a></p></li>
+<li><p><a class="reference internal" href="#test-a-model" id="id10">Test a model</a></p></li>
+<li><p><a class="reference internal" href="#run-md-with-lammps" id="id11">Run MD with LAMMPS</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</section>
+<section id="background">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">3.2. </span>Background</a><a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>In this tutorial, we will take the 镁金属 as an example to provide a detailed introduction to the training and application of the AESP.</p>
+<p>AESP is a software tool that employs 自适应进化算法 for 结构预测. Without manual intervention, it can end-to-end transform the data provided by users into a deep potential model in a matter of hours. This model can seamlessly integrate with common molecular dynamics simulation software (like LAMMPS, OpenMM, and GROMACS).</p>
+<p>For more detailed usage, you can refer to the <a class="reference external" href="https://docs.deepmodeling.org/projects/deepmd/en/master/index.html">DeePMD-kit’s documentation</a> as a comprehensive reference.</p>
+<p>In this case, the Deep Potential (DP) model was generated using the <strong>DeePMD-kit package</strong>.</p>
+</section>
+<section id="practice">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">3.3. </span>Practice</a><a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
+<section id="data-preparation">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">3.3.1. </span>Data Preparation</a><a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h3>
+<p>We have prepared the initial data for $CH_4$ required to run DeePMD-kit computations and placed it in the <code class="docutils literal notranslate"><span class="pre">DeePMD-kit_Tutorial</span></code> folder. You can view the corresponding files by clicking on the dataset on the left side:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Define the dataset URL and the paths</span>
+<span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://bohrium-api.dp.tech/ds-dl/DeePMD-kit-Tutorial-a8z5-v1.zip&quot;</span>
+<span class="n">zip_file_name</span> <span class="o">=</span> <span class="s2">&quot;DeePMD-kit-Tutorial-a8z5-v1.zip&quot;</span>
+<span class="n">dataset_directory</span> <span class="o">=</span> <span class="s2">&quot;DeePMD-kit_Tutorial&quot;</span>
+<span class="n">local_zip_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/personal/</span><span class="si">{</span><span class="n">zip_file_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">extract_path</span> <span class="o">=</span> <span class="s2">&quot;/personal/&quot;</span>
+
+<span class="c1"># Check if the dataset directory exists to avoid re-downloading and re-extracting</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">extract_path</span><span class="si">}{</span><span class="n">dataset_directory</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">):</span>
+    <span class="c1"># Download and extract if not exists</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">local_zip_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading dataset...&quot;</span><span class="p">)</span>
+        <span class="o">!</span>wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span><span class="o">{</span>local_zip_path<span class="o">}</span><span class="w"> </span><span class="o">{</span>dataset_url<span class="o">}</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting dataset...&quot;</span><span class="p">)</span>
+    <span class="o">!</span>unzip<span class="w"> </span>-q<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>local_zip_path<span class="o">}</span><span class="w"> </span>-d<span class="w"> </span><span class="o">{</span>extract_path<span class="o">}</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset is already downloaded and extracted.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Change the current working directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">extract_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current path is: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/personal/DeePMD-kit-Tutorial-a8z5-v1.zip: No such file or directory
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting dataset...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 1: unzip: command not found
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset is already downloaded and extracted.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="c1"># Change the current working directory</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">extract_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current path is: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/personal/&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at the downloaded DeePMD-kit_Tutorial folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>DeePMD-kit_Tutorial<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">DeePMD-kit_Tutorial</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">00.data</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">01.train</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">01.train.finished</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">02.lmp</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">02.lmp.finished</span>
+
+5 directories, 0 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are 3 subfolders under the DeePMD-kit_Tutorial folder: 00.data, 01.train, and 02.lmp.</p>
+<ul class="simple">
+<li><p>The 00.data folder is used to store training and testing data.</p></li>
+<li><p>The 01.train folder contains example scripts for training models using DeePMD-kit.</p></li>
+<li><p>The 01.train.finished folder includes the complete results of the training process.</p></li>
+<li><p>The 02.lmp folder contains example scripts for molecular dynamics simulations using LAMMPS.</p></li>
+</ul>
+<p>Let’s first take a look at the DeePMD-kit_Tutorial/00.data folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>DeePMD-kit_Tutorial/00.data<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">DeePMD-kit_Tutorial/00.data</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">abacus_md</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">training_data</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">validation_data</span>
+
+3 directories, 0 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>DeePMD-kit’s training data originates from first-principles calculation data, including atomic types, simulation cells, atomic coordinates, atomic forces, system energies, and virials.</p>
+<div align="left" style="margin:1.5rem"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010465518300882-gr1_lrg.jpg" alt="image-20230116161737203" style="zoom: 25%;"></div>
+<p>In the <em>00.data</em> folder, there is only the <em>abacus_md</em> folder, which contains data obtained through <em>ab initio</em> Molecular Dynamics (AIMD) simulations using ABACUS. In this tutorial, we have already completed the <em>ab initio</em> molecular dynamics calculations for the methane molecule for you.</p>
+<p>Detailed information about ABACUS can be found in its <a class="reference external" href="https://abacus.deepmodeling.com/en/latest/">documentation</a>.</p>
+<p>DeePMD-kit uses a compressed data format. All training data should first be converted into this format before they can be used in DeePMD-kit. This data format is explained in detail in the DeePMD-kit manual, which can be found on <a class="reference external" href="http://www.github.com/deepmodeling/deepmd-kit">DeePMD-kit’s GitHub</a>.</p>
+<p>We provide a convenient tool <strong>dpdata</strong>, which can convert data generated by VASP, CP2K, Gaussian, Quantum Espresso, ABACUS, and LAMMPS into DeePMD-kit’s compressed format.</p>
+<p>A snapshot of a molecular system that contains computational data information is called a frame. A data system comprises many frames sharing the same number of atoms and atom types.</p>
+<p>For example, a molecular dynamics trajectory can be converted into a data system, where each timestep corresponds to one frame in the system.</p>
+<p>Next, we use the dpdata tool to randomly split the data in abacus_md into training and validation data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dpdata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># load data of abacus/md format</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dpdata</span><span class="o">.</span><span class="n">LabeledSystem</span><span class="p">(</span><span class="s2">&quot;DeePMD-kit_Tutorial/00.data/abacus_md&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;abacus/md&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# the data contains </span><span class="si">%d</span><span class="s2"> frames&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="c1"># random choose 40 index for validation_data</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">index_validation</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># other indexes are training_data</span>
+<span class="n">index_training</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">201</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">index_validation</span><span class="p">))</span>
+<span class="n">data_training</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sub_system</span><span class="p">(</span><span class="n">index_training</span><span class="p">)</span>
+<span class="n">data_validation</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sub_system</span><span class="p">(</span><span class="n">index_validation</span><span class="p">)</span>
+
+<span class="c1"># all training data put into directory:&quot;training_data&quot;</span>
+<span class="n">data_training</span><span class="o">.</span><span class="n">to_deepmd_npy</span><span class="p">(</span><span class="s2">&quot;DeePMD-kit_Tutorial/00.data/training_data&quot;</span><span class="p">)</span>
+
+<span class="c1"># all validation data put into directory:&quot;validation_data&quot;</span>
+<span class="n">data_validation</span><span class="o">.</span><span class="n">to_deepmd_npy</span><span class="p">(</span><span class="s2">&quot;DeePMD-kit_Tutorial/00.data/validation_data&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# the training data contains </span><span class="si">%d</span><span class="s2"> frames&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_training</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# the validation data contains </span><span class="si">%d</span><span class="s2"> frames&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_validation</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># the data contains 201 frames
+# the training data contains 161 frames
+# the validation data contains 40 frames
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, 161 frames are picked as training data, and the other 40 frames are validation dat.</p>
+<p>Let’s take another look at the 00.data folder, where new files have been generated, which are the training and validation sets required for Deep Potential training with DeePMD-kit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>DeePMD-kit_Tutorial/00.data/<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">DeePMD-kit_Tutorial/00.data/</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">abacus_md</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">training_data</span>
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">validation_data</span>
+
+3 directories, 0 files
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>tree<span class="w"> </span>DeePMD-kit_Tutorial/00.data/training_data<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">DeePMD-kit_Tutorial/00.data/training_data</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Blue">set.000</span>
+├── type.raw
+└── type_map.raw
+
+1 directory, 2 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>The functions of these files are as follows:</p>
+<ul class="simple">
+<li><p>set.000: It is a directory that contains compressed format data (NumPy compressed arrays).</p></li>
+<li><p>type.raw: It is a file that contains the types of atoms (represented as integers).</p></li>
+<li><p>type_map.raw: It is a file that contains the names of the types of atoms.</p></li>
+</ul>
+<p>Let’s take a look at these files.</p>
+<p>Let’s have a look at <code class="docutils literal notranslate"><span class="pre">type.raw</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>DeePMD-kit_Tutorial/00.data/training_data/type.raw
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+0
+0
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us there are 5 atoms in this example, 4 atoms represented by type “0”, and 1 atom represented by type “1”.
+Sometimes one needs to map the integer types to atom name. The mapping can be given by the file <code class="docutils literal notranslate"><span class="pre">type_map.raw</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>DeePMD-kit_Tutorial/00.data/training_data/type_map.raw
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+C
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us the type “0” is named by “H”, and the type “1” is named by “C”.</p>
+<p>More detailed documentation on using dpdata for data conversion can be found <a class="reference internal" href="#../data/data-conv.html"><span class="xref myst">here</span></a></p>
+</section>
+<section id="prepare-input-script">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">3.3.2. </span>Prepare input script</a><a class="headerlink" href="#prepare-input-script" title="Link to this heading">#</a></h3>
+<p>Once the data preparation is done, we can go on with training. Now go to the training directory.
+DeePMD-kit requires a <code class="docutils literal notranslate"><span class="pre">json</span></code> format file to specify parameters for training.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check dargs version and Install</span>
+<span class="o">!</span>pip<span class="w"> </span>show<span class="w"> </span>dargs<span class="w"> </span><span class="o">||</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>dargs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show input.json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">deepmd.utils.argcheck</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_args</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dargs.notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSON</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./DeePMD-kit_Tutorial/01.train/input.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">JSON</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">gen_args</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dargs-codeblock {
+  width: 100%;
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+  color: #000000;
+}
+.dargs-codeblock::before {
+  counter-reset: listing;
+}
+.dargs-codeblock code.dargs-linebegin {
+  counter-increment: listing;
+}
+.dargs-codeblock code.dargs-linebegin::before {
+  content: counter(listing) " ";
+  display: inline-block;
+  width: 2em;
+  padding-left: auto;
+  margin-left: auto;
+  text-align: right;
+  color: #6e7781;
+}
+.dargs-codeblock code.dargs-code {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+  color: #000000;
+}
+.dargs-codeblock .dargs-key {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.dargs-codeblock .dargs-key code.dargs-code {
+  color: #0550ae;
+}
+.dargs-codeblock .dargs-key .dargs-doc {
+  visibility: hidden;
+  width: 600px;
+  background-color: black;
+  color: #fff;
+  padding: 1em 1em;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+.dargs-codeblock .dargs-key:hover .dargs-doc {
+  visibility: visible;
+}
+.dargs-codeblock .dargs-key .dargs-doc .dargs-doc-code {
+  color: #bbbbff;
+}
+</style>
+<div class="dargs-codeblock"><code class="dargs-code dargs-linebegin"></code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">"that's all",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"model"</code><span class="dargs-doc">model: <br/>    type: <span class="dargs-doc-code">dict</span></span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"type_map"</code><span class="dargs-doc">type_map: <br/>    type: <span class="dargs-doc-code">typing.list[str]</span>, optional<hr/>A list of strings. Give the name to each type of atoms. It is noted that the number of atom type of training system must be less than 128 in a GPU environment. If not given, type.raw in each system should use the same type indexes, and type_map.raw will take no effect.</span></span><code class="dargs-code">: </code><code class="dargs-code">[<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code>  "H",<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code>  "C"<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code>],</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"descriptor"</code><span class="dargs-doc">descriptor: <br/>    type: <span class="dargs-doc-code">dict</span><hr/>The descriptor of atomic environment.</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"type"</code><span class="dargs-doc">type:<br/>type: <span class="dargs-doc-code">str</span><hr/>The type of the descriptor. See explanation below. <br/>- <span class="dargs-doc-code">loc_frame</span>: Defines a local frame at each atom, and the compute the descriptor as local coordinates under this frame.<br/>- <span class="dargs-doc-code">se_e2_a</span>: Used by the smooth edition of Deep Potential. The full relative coordinates are used to construct the descriptor.<br/>- <span class="dargs-doc-code">se_e2_r</span>: Used by the smooth edition of Deep Potential. Only the distance between atoms is used to construct the descriptor.<br/>- <span class="dargs-doc-code">se_e3</span>: Used by the smooth edition of Deep Potential. The full relative coordinates are used to construct the descriptor. Three-body embedding will be used by this descriptor.<br/>- <span class="dargs-doc-code">se_a_tpe</span>: Used by the smooth edition of Deep Potential. The full relative coordinates are used to construct the descriptor. Type embedding will be used by this descriptor.<br/>- <span class="dargs-doc-code">se_atten</span>: Used by the smooth edition of Deep Potential. The full relative coordinates are used to construct the descriptor. Attention mechanism will be used by this descriptor.<br/>- <span class="dargs-doc-code">se_atten_v2</span>: Used by the smooth edition of Deep Potential. The full relative coordinates are used to construct the descriptor. Attention mechanism with new modifications will be used by this descriptor.<br/>- <span class="dargs-doc-code">se_a_mask</span>: Used by the smooth edition of Deep Potential. It can accept a variable number of atoms in a frame (Non-PBC system). <i>aparam</i> are required as an indicator matrix for the real/virtual sign of input atoms. <br/>- <span class="dargs-doc-code">hybrid</span>: Concatenate of a list of descriptors as a new descriptor.</span></span><code class="dargs-code">: </code><code class="dargs-code">"se_e2_a",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"sel"</code><span class="dargs-doc">sel: <br/>    type: <span class="dargs-doc-code">str</span> | <span class="dargs-doc-code">typing.list[int]</span>, optional, default: <span class="dargs-doc-code">auto</span><hr/>This parameter set the number of selected neighbors for each type of atom. It can be:<br/>    - <span class="dargs-doc-code">list[int]</span>. The length of the list should be the same as the number of atom types in the system. <span class="dargs-doc-code">sel[i]</span> gives the selected number of type-i neighbors. <span class="dargs-doc-code">sel[i]</span> is recommended to be larger than the maximally possible number of type-i neighbors in the cut-off radius. It is noted that the total sel value must be less than 4096 in a GPU environment.<br/>    - <span class="dargs-doc-code">str</span>. Can be "auto:factor" or "auto". "factor" is a float number larger than 1. This option will automatically determine the <span class="dargs-doc-code">sel</span>. In detail it counts the maximal number of neighbors with in the cutoff radius for each type of neighbor, then multiply the maximum by the "factor". Finally the number is wraped up to 4 divisible. The option "auto" is equivalent to "auto:1.1".</span></span><code class="dargs-code">: </code><code class="dargs-code">"auto",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"rcut_smth"</code><span class="dargs-doc">rcut_smth: <br/>    type: <span class="dargs-doc-code">float</span>, optional, default: <span class="dargs-doc-code">0.5</span><hr/>Where to start smoothing. For example the 1/r term is smoothed from <span class="dargs-doc-code">rcut</span> to <span class="dargs-doc-code">rcut_smth</span></span></span><code class="dargs-code">: </code><code class="dargs-code">0.5,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"rcut"</code><span class="dargs-doc">rcut: <br/>    type: <span class="dargs-doc-code">float</span>, optional, default: <span class="dargs-doc-code">6.0</span><hr/>The cut-off radius.</span></span><code class="dargs-code">: </code><code class="dargs-code">6.0,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"neuron"</code><span class="dargs-doc">neuron: <br/>    type: <span class="dargs-doc-code">typing.list[int]</span>, optional, default: <span class="dargs-doc-code">[10, 20, 40]</span><hr/>Number of neurons in each hidden layers of the embedding net. When two layers are of the same size or one layer is twice as large as the previous layer, a skip connection is built.</span></span><code class="dargs-code">: </code><code class="dargs-code">[<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  25,<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  50,<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  100<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>],</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"resnet_dt"</code><span class="dargs-doc">resnet_dt: <br/>    type: <span class="dargs-doc-code">bool</span>, optional, default: <span class="dargs-doc-code">False</span><hr/>Whether to use a "Timestep" in the skip connection</span></span><code class="dargs-code">: </code><code class="dargs-code">false,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"axis_neuron"</code><span class="dargs-doc">axis_neuron: <br/>    type: <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">4</span>, alias: <i>n_axis_neuron</i><hr/>Size of the submatrix of G (embedding matrix).</span></span><code class="dargs-code">: </code><code class="dargs-code">16,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"seed"</code><span class="dargs-doc">seed: <br/>    type: <span class="dargs-doc-code">NoneType</span> | <span class="dargs-doc-code">int</span>, optional<hr/>Random seed for parameter initialization</span></span><code class="dargs-code">: </code><code class="dargs-code">1,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">" that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"fitting_net"</code><span class="dargs-doc">fitting_net: <br/>    type: <span class="dargs-doc-code">dict</span><hr/>The fitting of physical properties.</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"neuron"</code><span class="dargs-doc">neuron: <br/>    type: <span class="dargs-doc-code">typing.list[int]</span>, optional, default: <span class="dargs-doc-code">[120, 120, 120]</span>, alias: <i>n_neuron</i><hr/>The number of neurons in each hidden layers of the fitting net. When two hidden layers are of the same size, a skip connection is built.</span></span><code class="dargs-code">: </code><code class="dargs-code">[<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  240,<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  240,<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  240<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>],</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"resnet_dt"</code><span class="dargs-doc">resnet_dt: <br/>    type: <span class="dargs-doc-code">bool</span>, optional, default: <span class="dargs-doc-code">True</span><hr/>Whether to use a "Timestep" in the skip connection</span></span><code class="dargs-code">: </code><code class="dargs-code">true,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"seed"</code><span class="dargs-doc">seed: <br/>    type: <span class="dargs-doc-code">NoneType</span> | <span class="dargs-doc-code">int</span>, optional<hr/>Random seed for parameter initialization of the fitting net</span></span><code class="dargs-code">: </code><code class="dargs-code">1,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">" that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">" that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"learning_rate"</code><span class="dargs-doc">learning_rate: <br/>    type: <span class="dargs-doc-code">dict</span>, optional<hr/>The definition of learning rate</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"type"</code><span class="dargs-doc">type:<br/>type: <span class="dargs-doc-code">str</span>, default: <span class="dargs-doc-code">exp</span><hr/>The type of the learning rate.</span></span><code class="dargs-code">: </code><code class="dargs-code">"exp",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"decay_steps"</code><span class="dargs-doc">decay_steps: <br/>    type: <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">5000</span><hr/>The learning rate is decaying every this number of training steps.</span></span><code class="dargs-code">: </code><code class="dargs-code">50,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"start_lr"</code><span class="dargs-doc">start_lr: <br/>    type: <span class="dargs-doc-code">float</span>, optional, default: <span class="dargs-doc-code">0.001</span><hr/>The learning rate at the start of the training.</span></span><code class="dargs-code">: </code><code class="dargs-code">0.001,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"stop_lr"</code><span class="dargs-doc">stop_lr: <br/>    type: <span class="dargs-doc-code">float</span>, optional, default: <span class="dargs-doc-code">1e-08</span><hr/>The desired learning rate at the end of the training.</span></span><code class="dargs-code">: </code><code class="dargs-code">3.51e-08,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">"that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"loss"</code><span class="dargs-doc">loss: <br/>    type: <span class="dargs-doc-code">dict</span>, optional<hr/>The definition of loss function. The loss type should be set to <span class="dargs-doc-code">tensor</span>, <span class="dargs-doc-code">ener</span> or left unset.</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"type"</code><span class="dargs-doc">type:<br/>type: <span class="dargs-doc-code">str</span>, default: <span class="dargs-doc-code">ener</span><hr/>The type of the loss. When the fitting type is <span class="dargs-doc-code">ener</span>, the loss type should be set to <span class="dargs-doc-code">ener</span> or left unset. When the fitting type is <span class="dargs-doc-code">dipole</span> or <span class="dargs-doc-code">polar</span>, the loss type should be set to <span class="dargs-doc-code">tensor</span>.</span></span><code class="dargs-code">: </code><code class="dargs-code">"ener",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"start_pref_e"</code><span class="dargs-doc">start_pref_e: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">0.02</span><hr/>The prefactor of energy loss at the start of the training. Should be larger than or equal to 0. If set to none-zero value, the energy label should be provided by file energy.npy in each data system. If both start_pref_e and limit_pref_e are set to 0, then the energy will be ignored.</span></span><code class="dargs-code">: </code><code class="dargs-code">0.02,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"limit_pref_e"</code><span class="dargs-doc">limit_pref_e: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1.0</span><hr/>The prefactor of energy loss at the limit of the training, Should be larger than or equal to 0. i.e. the training step goes to infinity.</span></span><code class="dargs-code">: </code><code class="dargs-code">1,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"start_pref_f"</code><span class="dargs-doc">start_pref_f: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1000</span><hr/>The prefactor of force loss at the start of the training. Should be larger than or equal to 0. If set to none-zero value, the force label should be provided by file force.npy in each data system. If both start_pref_f and limit_pref_f are set to 0, then the force will be ignored.</span></span><code class="dargs-code">: </code><code class="dargs-code">1000,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"limit_pref_f"</code><span class="dargs-doc">limit_pref_f: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1.0</span><hr/>The prefactor of force loss at the limit of the training, Should be larger than or equal to 0. i.e. the training step goes to infinity.</span></span><code class="dargs-code">: </code><code class="dargs-code">1,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"start_pref_v"</code><span class="dargs-doc">start_pref_v: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">0.0</span><hr/>The prefactor of virial loss at the start of the training. Should be larger than or equal to 0. If set to none-zero value, the virial label should be provided by file virial.npy in each data system. If both start_pref_v and limit_pref_v are set to 0, then the virial will be ignored.</span></span><code class="dargs-code">: </code><code class="dargs-code">0,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"limit_pref_v"</code><span class="dargs-doc">limit_pref_v: <br/>    type: <span class="dargs-doc-code">float</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">0.0</span><hr/>The prefactor of virial loss at the limit of the training, Should be larger than or equal to 0. i.e. the training step goes to infinity.</span></span><code class="dargs-code">: </code><code class="dargs-code">0,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">" that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"training"</code><span class="dargs-doc">training: <br/>    type: <span class="dargs-doc-code">dict</span><hr/>The training options.</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"training_data"</code><span class="dargs-doc">training_data: <br/>    type: <span class="dargs-doc-code">dict</span>, optional<hr/>Configurations of training data.</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"systems"</code><span class="dargs-doc">systems: <br/>    type: <span class="dargs-doc-code">str</span> | <span class="dargs-doc-code">typing.list[str]</span><hr/>The data systems for training. This key can be provided with a list that specifies the systems, or be provided with a string by which the prefix of all systems are given and the list of the systems is automatically generated.</span></span><code class="dargs-code">: </code><code class="dargs-code">[<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  "../00.data/training_data"<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>],</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"batch_size"</code><span class="dargs-doc">batch_size: <br/>    type: <span class="dargs-doc-code">str</span> | <span class="dargs-doc-code">typing.list[int]</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">auto</span><hr/>This key can be <br/>- list: the length of which is the same as the <span class="dargs-doc-code">systems</span>_. The batch size of each system is given by the elements of the list.<br/>- int: all <span class="dargs-doc-code">systems</span>_ use the same batch size.<br/>- string "auto": automatically determines the batch size so that the batch_size times the number of atoms in the system is no less than 32.<br/>- string "auto:N": automatically determines the batch size so that the batch_size times the number of atoms in the system is no less than N.<br/>- string "mixed:N": the batch data will be sampled from all systems and merged into a mixed system with the batch size N. Only support the se_atten descriptor.<br/>If MPI is used, the value should be considered as the batch size per task.</span></span><code class="dargs-code">: </code><code class="dargs-code">"auto",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">"that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"validation_data"</code><span class="dargs-doc">validation_data: <br/>    type: <span class="dargs-doc-code">NoneType</span> | <span class="dargs-doc-code">dict</span>, optional, default: <span class="dargs-doc-code">None</span><hr/>Configurations of validation data. Similar to that of training data, except that a <span class="dargs-doc-code">numb_btch</span> argument may be configured</span></span><code class="dargs-code">: </code><code class="dargs-code">{</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"systems"</code><span class="dargs-doc">systems: <br/>    type: <span class="dargs-doc-code">str</span> | <span class="dargs-doc-code">typing.list[str]</span><hr/>The data systems for validation. This key can be provided with a list that specifies the systems, or be provided with a string by which the prefix of all systems are given and the list of the systems is automatically generated.</span></span><code class="dargs-code">: </code><code class="dargs-code">[<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>  "../00.data/validation_data"<br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>],</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"batch_size"</code><span class="dargs-doc">batch_size: <br/>    type: <span class="dargs-doc-code">str</span> | <span class="dargs-doc-code">typing.list[int]</span> | <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">auto</span><hr/>This key can be <br/>- list: the length of which is the same as the <span class="dargs-doc-code">systems</span>_. The batch size of each system is given by the elements of the list.<br/>- int: all <span class="dargs-doc-code">systems</span>_ use the same batch size.<br/>- string "auto": automatically determines the batch size so that the batch_size times the number of atoms in the system is no less than 32.<br/>- string "auto:N": automatically determines the batch size so that the batch_size times the number of atoms in the system is no less than N.</span></span><code class="dargs-code">: </code><code class="dargs-code">"auto",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"numb_btch"</code><span class="dargs-doc">numb_btch: <br/>    type: <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1</span>, alias: <i>numb_batch</i><hr/>An integer that specifies the number of batches to be sampled for each validation period.</span></span><code class="dargs-code">: </code><code class="dargs-code">1,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">"that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="dargs-code">},</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"numb_steps"</code><span class="dargs-doc">numb_steps: <br/>    type: <span class="dargs-doc-code">int</span>, alias: <i>stop_batch</i><hr/>Number of training batch. Each training uses one batch of data.</span></span><code class="dargs-code">: </code><code class="dargs-code">10000,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"seed"</code><span class="dargs-doc">seed: <br/>    type: <span class="dargs-doc-code">NoneType</span> | <span class="dargs-doc-code">int</span>, optional<hr/>The random seed for getting frames from the training data set.</span></span><code class="dargs-code">: </code><code class="dargs-code">10,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"disp_file"</code><span class="dargs-doc">disp_file: <br/>    type: <span class="dargs-doc-code">str</span>, optional, default: <span class="dargs-doc-code">lcurve.out</span><hr/>The file for printing learning curve.</span></span><code class="dargs-code">: </code><code class="dargs-code">"lcurve.out",</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"disp_freq"</code><span class="dargs-doc">disp_freq: <br/>    type: <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1000</span><hr/>The frequency of printing learning curve.</span></span><code class="dargs-code">: </code><code class="dargs-code">200,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="dargs-key"><code class="dargs-code">"save_freq"</code><span class="dargs-doc">save_freq: <br/>    type: <span class="dargs-doc-code">int</span>, optional, default: <span class="dargs-doc-code">1000</span><hr/>The frequency of saving check point.</span></span><code class="dargs-code">: </code><code class="dargs-code">1000,</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;&nbsp;&nbsp;</code><span><code class="dargs-code">"_comment"</code></span><code class="dargs-code">: </code><code class="dargs-code">"that's all"</code><br/><code class="dargs-code dargs-linebegin">&nbsp;&nbsp;</code><code class="dargs-code">}</code><br/><code class="dargs-code dargs-linebegin"></code><code class="dargs-code">}</code><br/></div></div></div>
+</div>
+<p>DeePMD-kit requires a <code class="docutils literal notranslate"><span class="pre">json</span></code> format file to specify parameters for training.</p>
+<p>In the model section, the parameters of embedding and fitting networks are specified.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;model&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;type_map&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">],</span><span class="w">                 </span>
+<span class="w">    </span><span class="nt">&quot;descriptor&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w">            </span><span class="s2">&quot;se_e2_a&quot;</span><span class="p">,</span><span class="w">          </span>
+<span class="w">        </span><span class="nt">&quot;rcut&quot;</span><span class="p">:</span><span class="w">            </span><span class="mf">6.00</span><span class="p">,</span><span class="w">               </span>
+<span class="w">        </span><span class="nt">&quot;rcut_smth&quot;</span><span class="p">:</span><span class="w">       </span><span class="mf">0.50</span><span class="p">,</span><span class="w">               </span>
+<span class="w">        </span><span class="nt">&quot;sel&quot;</span><span class="p">:</span><span class="w">             </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="w">             </span>
+<span class="w">        </span><span class="nt">&quot;neuron&quot;</span><span class="p">:</span><span class="w">          </span><span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span><span class="w">       </span>
+<span class="w">        </span><span class="nt">&quot;resnet_dt&quot;</span><span class="p">:</span><span class="w">       </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;axis_neuron&quot;</span><span class="p">:</span><span class="w">     </span><span class="mi">16</span><span class="p">,</span><span class="w">                  </span>
+<span class="w">        </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;fitting_net&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;neuron&quot;</span><span class="p">:</span><span class="w">          </span><span class="p">[</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">240</span><span class="p">],</span><span class="w">    </span>
+<span class="w">        </span><span class="nt">&quot;resnet_dt&quot;</span><span class="p">:</span><span class="w">       </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;that&#39;s all&quot;</span><span class="err">&#39;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>The explanation for some of the parameters is as follows:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Expiation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>type_map</p></td>
+<td><p><em>the</em> <em>name</em> <em>of</em> <em>each</em> <em>type</em> <em>of</em> <em>atom</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>descriptor &gt; type</p></td>
+<td><p><em>the</em> <em>type</em> <em>of</em> <em>descriptor</em></p></td>
+</tr>
+<tr class="row-even"><td><p>descriptor &gt; rcut</p></td>
+<td><p><em>cut-off</em> <em>radius</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>descriptor &gt; rcut_smth</p></td>
+<td><p><em>where</em> <em>the</em> <em>smoothing</em> <em>starts</em></p></td>
+</tr>
+<tr class="row-even"><td><p>descriptor &gt; sel</p></td>
+<td><p><em>the</em> <em>maximum</em> <em>number</em> <em>of</em> <em>type</em> <em>i</em> <em>atoms</em> <em>in</em> <em>the</em> <em>cut-off</em> <em>radius</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>descriptor &gt; neuron</p></td>
+<td><p><em>size</em> <em>of</em> <em>the</em> <em>embedding</em> <em>neural</em> <em>network</em></p></td>
+</tr>
+<tr class="row-even"><td><p>descriptor &gt; axis_neuron</p></td>
+<td><p><em>the</em> <em>size</em> <em>of</em> <em>the</em> <em>submatrix</em> <em>of</em> <em>G</em> <em>(embedding</em> <em>matrix)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>fitting_net &gt; neuron</p></td>
+<td><p><em>size</em> <em>of</em> <em>the</em> <em>fitting</em> <em>neural</em> <em>network</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">se_e2_a</span></code> descriptor is used to train the DP model. The item neurons set the size of the descriptors and fitting network to [25, 50, 100] and [240, 240, 240], respectively. The components in local environment to smoothly go to zero from 0.5 to 6 Å.</p>
+<p>The following are the parameters that specify the learning rate and loss function.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&quot;learning_rate&quot;</span><span class="w"> </span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w">                </span><span class="s2">&quot;exp&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;decay_steps&quot;</span><span class="p">:</span><span class="w">         </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;start_lr&quot;</span><span class="p">:</span><span class="w">            </span><span class="mf">0.001</span><span class="p">,</span><span class="w">    </span>
+<span class="w">        </span><span class="nt">&quot;stop_lr&quot;</span><span class="p">:</span><span class="w">             </span><span class="mf">3.51e-8</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">            </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;loss&quot;</span><span class="w"> </span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w">                </span><span class="s2">&quot;ener&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;start_pref_e&quot;</span><span class="p">:</span><span class="w">        </span><span class="mf">0.02</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;limit_pref_e&quot;</span><span class="p">:</span><span class="w">        </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;start_pref_f&quot;</span><span class="p">:</span><span class="w">        </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;limit_pref_f&quot;</span><span class="p">:</span><span class="w">        </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;start_pref_v&quot;</span><span class="p">:</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;limit_pref_v&quot;</span><span class="p">:</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">            </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+</pre></div>
+</div>
+<p>In the loss function, <code class="docutils literal notranslate"><span class="pre">pref_e</span></code> increases from 0.02 to 1, and <code class="docutils literal notranslate"><span class="pre">pref_f</span></code> decreases from 1000 to 1  progressively, which means that the force term dominates at the beginning, while energy and virial terms become important at the end. This strategy is very effective and reduces the total training time. <code class="docutils literal notranslate"><span class="pre">pref_v</span></code> is set to 0 , indicating that no virial data are included in the training process. The starting learning rate, stop learning rate, and decay steps are set to 0.001, 3.51e-8, and 50, respectively. The model is trained for 10000 steps.</p>
+<p>The training parameters are given in the following</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&quot;training&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;training_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;systems&quot;</span><span class="p">:</span><span class="w">            </span><span class="p">[</span><span class="s2">&quot;../00.data/training_data&quot;</span><span class="p">],</span><span class="w">     </span>
+<span class="w">            </span><span class="nt">&quot;batch_size&quot;</span><span class="p">:</span><span class="w">         </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="w">                       </span>
+<span class="w">            </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">           </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;validation_data&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;systems&quot;</span><span class="p">:</span><span class="w">            </span><span class="p">[</span><span class="s2">&quot;../00.data/validation_data/&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;batch_size&quot;</span><span class="p">:</span><span class="w">         </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="w">               </span>
+<span class="w">            </span><span class="nt">&quot;numb_btch&quot;</span><span class="p">:</span><span class="w">          </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_comment&quot;</span><span class="p">:</span><span class="w">           </span><span class="s2">&quot;that&#39;s all&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;numb_steps&quot;</span><span class="p">:</span><span class="w">             </span><span class="mi">10000</span><span class="p">,</span><span class="w">                           </span>
+<span class="w">        </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w">                   </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;disp_file&quot;</span><span class="p">:</span><span class="w">              </span><span class="s2">&quot;lcurve.out&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;disp_freq&quot;</span><span class="p">:</span><span class="w">              </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;save_freq&quot;</span><span class="p">:</span><span class="w">              </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+</pre></div>
+</div>
+<p>More detailed docs about Data conversion can be found <a class="reference external" href="https://docs.deepmodeling.org/projects/deepmd/en/master/data/data-conv.html">here</a></p>
+</section>
+<section id="train-a-model">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">3.3.3. </span>Train a model</a><a class="headerlink" href="#train-a-model" title="Link to this heading">#</a></h3>
+<p>After the training script is prepared, we can start the training with DeePMD-kit by simply running</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ########## Time Warning: 120 secs,C32_CPU ; 13 mins ,C2_CPU ##########</span>
+<span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>DeePMD-kit_Tutorial/01.train/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dp<span class="w"> </span>train<span class="w"> </span>input.json
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+DEEPMD INFO    Calculate neighbor statistics... (add --skip-neighbor-stat to skip this step)
+DEEPMD INFO    training data with min nbor dist: 1.0460506586976848
+DEEPMD INFO    training data with max nbor size: [4 1]
+DEEPMD INFO     _____               _____   __  __  _____           _     _  _   
+DEEPMD INFO    |  __ \             |  __ \ |  \/  ||  __ \         | |   (_)| |  
+DEEPMD INFO    | |  | |  ___   ___ | |__) || \  / || |  | | ______ | | __ _ | |_ 
+DEEPMD INFO    | |  | | / _ \ / _ \|  ___/ | |\/| || |  | ||______|| |/ /| || __|
+DEEPMD INFO    | |__| ||  __/|  __/| |     | |  | || |__| |        |   &lt; | || |_ 
+DEEPMD INFO    |_____/  \___| \___||_|     |_|  |_||_____/         |_|\_\|_| \__|
+DEEPMD INFO    Please read and cite:
+DEEPMD INFO    Wang, Zhang, Han and E, Comput.Phys.Comm. 228, 178-184 (2018)
+DEEPMD INFO    Zeng et al, J. Chem. Phys., 159, 054801 (2023)
+DEEPMD INFO    See https://deepmd.rtfd.io/credits/ for details.
+DEEPMD INFO    installed to:         /root/miniconda3/envs/deepmd
+DEEPMD INFO    source :              v2.2.7
+DEEPMD INFO    source branch:         HEAD
+DEEPMD INFO    source commit:        839f4fe7
+DEEPMD INFO    source commit at:     2023-10-27 21:10:24 +0800
+DEEPMD INFO    build float prec:     double
+DEEPMD INFO    build variant:        cpu
+DEEPMD INFO    build with tf inc:    /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/include;/root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/../../../../include
+DEEPMD INFO    build with tf lib:    
+DEEPMD INFO    ---Summary of the training---------------------------------------
+DEEPMD INFO    running on:           bohrium-21213-1088639
+DEEPMD INFO    computing device:     cpu:0
+DEEPMD INFO    Count of visible GPU: 0
+DEEPMD INFO    num_intra_threads:    0
+DEEPMD INFO    num_inter_threads:    0
+DEEPMD INFO    -----------------------------------------------------------------
+DEEPMD INFO    ---Summary of DataSystem: training     -----------------------------------------------
+DEEPMD INFO    found 1 system(s):
+DEEPMD INFO                                        system  natoms  bch_sz   n_bch   prob  pbc
+DEEPMD INFO                      ../00.data/training_data       5       7      23  1.000    T
+DEEPMD INFO    --------------------------------------------------------------------------------------
+DEEPMD INFO    ---Summary of DataSystem: validation   -----------------------------------------------
+DEEPMD INFO    found 1 system(s):
+DEEPMD INFO                                        system  natoms  bch_sz   n_bch   prob  pbc
+DEEPMD INFO                    ../00.data/validation_data       5       7       5  1.000    T
+DEEPMD INFO    --------------------------------------------------------------------------------------
+DEEPMD INFO    training without frame parameter
+DEEPMD INFO    data stating... (this step may take long time)
+DEEPMD INFO    built lr
+DEEPMD INFO    built network
+DEEPMD INFO    built training
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+DEEPMD INFO    initialize model from scratch
+DEEPMD INFO    start training at lr 1.00e-03 (== 1.00e-03), decay_step 50, decay_rate 0.950006, final lr will be 3.51e-08
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/train/trainer.py:1197: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It&#39;s easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/train/trainer.py:1197: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It&#39;s easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+DEEPMD INFO    batch     200 training time 17.53 s, testing time 0.05 s, total wall time 18.41 s
+DEEPMD INFO    batch     400 training time 14.96 s, testing time 0.05 s, total wall time 15.11 s
+DEEPMD INFO    batch     600 training time 15.47 s, testing time 0.05 s, total wall time 15.65 s
+DEEPMD INFO    batch     800 training time 14.25 s, testing time 0.04 s, total wall time 14.41 s
+DEEPMD INFO    batch    1000 training time 15.49 s, testing time 0.05 s, total wall time 15.65 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    1200 training time 16.33 s, testing time 0.08 s, total wall time 17.33 s
+DEEPMD INFO    batch    1400 training time 14.31 s, testing time 0.05 s, total wall time 14.47 s
+DEEPMD INFO    batch    1600 training time 16.54 s, testing time 0.05 s, total wall time 16.72 s
+DEEPMD INFO    batch    1800 training time 16.90 s, testing time 0.09 s, total wall time 17.09 s
+DEEPMD INFO    batch    2000 training time 17.20 s, testing time 0.06 s, total wall time 17.37 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    2200 training time 14.29 s, testing time 0.04 s, total wall time 14.83 s
+DEEPMD INFO    batch    2400 training time 13.11 s, testing time 0.04 s, total wall time 13.29 s
+DEEPMD INFO    batch    2600 training time 12.93 s, testing time 0.04 s, total wall time 13.08 s
+DEEPMD INFO    batch    2800 training time 14.58 s, testing time 0.04 s, total wall time 14.74 s
+DEEPMD INFO    batch    3000 training time 13.21 s, testing time 0.04 s, total wall time 13.35 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    3200 training time 14.40 s, testing time 0.07 s, total wall time 15.14 s
+DEEPMD INFO    batch    3400 training time 13.08 s, testing time 0.04 s, total wall time 13.23 s
+DEEPMD INFO    batch    3600 training time 12.93 s, testing time 0.06 s, total wall time 13.13 s
+DEEPMD INFO    batch    3800 training time 15.23 s, testing time 0.05 s, total wall time 15.43 s
+DEEPMD INFO    batch    4000 training time 13.20 s, testing time 0.04 s, total wall time 13.35 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    4200 training time 14.82 s, testing time 0.05 s, total wall time 16.06 s
+DEEPMD INFO    batch    4400 training time 14.26 s, testing time 0.05 s, total wall time 14.42 s
+DEEPMD INFO    batch    4600 training time 15.50 s, testing time 0.05 s, total wall time 15.66 s
+DEEPMD INFO    batch    4800 training time 14.12 s, testing time 0.05 s, total wall time 14.29 s
+DEEPMD INFO    batch    5000 training time 15.71 s, testing time 0.05 s, total wall time 15.88 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    5200 training time 14.36 s, testing time 0.07 s, total wall time 15.40 s
+DEEPMD INFO    batch    5400 training time 15.77 s, testing time 0.05 s, total wall time 15.93 s
+DEEPMD INFO    batch    5600 training time 14.12 s, testing time 0.05 s, total wall time 14.29 s
+DEEPMD INFO    batch    5800 training time 15.53 s, testing time 0.04 s, total wall time 15.70 s
+DEEPMD INFO    batch    6000 training time 15.39 s, testing time 0.09 s, total wall time 15.58 s
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/training/saver.py:1066: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/training/saver.py:1066: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    6200 training time 14.74 s, testing time 0.05 s, total wall time 15.64 s
+DEEPMD INFO    batch    6400 training time 15.24 s, testing time 0.09 s, total wall time 15.44 s
+DEEPMD INFO    batch    6600 training time 14.29 s, testing time 0.05 s, total wall time 14.48 s
+DEEPMD INFO    batch    6800 training time 15.46 s, testing time 0.09 s, total wall time 15.66 s
+DEEPMD INFO    batch    7000 training time 15.34 s, testing time 0.05 s, total wall time 15.54 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    7200 training time 15.63 s, testing time 0.05 s, total wall time 16.19 s
+DEEPMD INFO    batch    7400 training time 14.71 s, testing time 0.06 s, total wall time 14.90 s
+DEEPMD INFO    batch    7600 training time 15.96 s, testing time 0.05 s, total wall time 16.12 s
+DEEPMD INFO    batch    7800 training time 19.68 s, testing time 0.06 s, total wall time 19.92 s
+DEEPMD INFO    batch    8000 training time 15.81 s, testing time 0.07 s, total wall time 16.00 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    8200 training time 13.62 s, testing time 0.04 s, total wall time 14.54 s
+DEEPMD INFO    batch    8400 training time 13.23 s, testing time 0.04 s, total wall time 13.38 s
+DEEPMD INFO    batch    8600 training time 14.90 s, testing time 0.04 s, total wall time 15.08 s
+DEEPMD INFO    batch    8800 training time 13.19 s, testing time 0.04 s, total wall time 13.34 s
+DEEPMD INFO    batch    9000 training time 13.78 s, testing time 0.09 s, total wall time 14.00 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    batch    9200 training time 13.76 s, testing time 0.04 s, total wall time 14.41 s
+DEEPMD INFO    batch    9400 training time 13.06 s, testing time 0.04 s, total wall time 13.20 s
+DEEPMD INFO    batch    9600 training time 14.23 s, testing time 0.04 s, total wall time 14.42 s
+DEEPMD INFO    batch    9800 training time 13.72 s, testing time 0.05 s, total wall time 13.88 s
+DEEPMD INFO    batch   10000 training time 13.92 s, testing time 0.09 s, total wall time 14.12 s
+DEEPMD INFO    saved checkpoint model.ckpt
+DEEPMD INFO    average training time: 0.0737 s/batch (exclude first 200 batches)
+DEEPMD INFO    finished training
+DEEPMD INFO    wall time: 756.650 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the screen, you will see the information of the data system(s)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="o">-----------------------------------------------------------------</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="o">---</span><span class="n">Summary</span> <span class="n">of</span> <span class="n">DataSystem</span><span class="p">:</span> <span class="n">training</span>     <span class="o">----------------------------------</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">found</span> <span class="mi">1</span> <span class="n">system</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>                                 <span class="n">system</span>  <span class="n">natoms</span>  <span class="n">bch_sz</span>   <span class="n">n_bch</span>   <span class="n">prob</span>  <span class="n">pbc</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>               <span class="o">../</span><span class="mf">00.</span><span class="n">data</span><span class="o">/</span><span class="n">training_data</span>       <span class="mi">5</span>       <span class="mi">7</span>      <span class="mi">23</span>  <span class="mf">1.000</span>    <span class="n">T</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="o">-------------------------------------------------------------------------</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="o">---</span><span class="n">Summary</span> <span class="n">of</span> <span class="n">DataSystem</span><span class="p">:</span> <span class="n">validation</span>   <span class="o">----------------------------------</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">found</span> <span class="mi">1</span> <span class="n">system</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>                                 <span class="n">system</span>  <span class="n">natoms</span>  <span class="n">bch_sz</span>   <span class="n">n_bch</span>   <span class="n">prob</span>  <span class="n">pbc</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>             <span class="o">../</span><span class="mf">00.</span><span class="n">data</span><span class="o">/</span><span class="n">validation_data</span>       <span class="mi">5</span>       <span class="mi">7</span>       <span class="mi">5</span>  <span class="mf">1.000</span>    <span class="n">T</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="o">-------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>and the starting and final learning rate of this training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">start</span> <span class="n">training</span> <span class="n">at</span> <span class="n">lr</span> <span class="mf">1.00e-03</span> <span class="p">(</span><span class="o">==</span> <span class="mf">1.00e-03</span><span class="p">),</span> <span class="n">decay_step</span> <span class="mi">50</span><span class="p">,</span> <span class="n">decay_rate</span> <span class="mf">0.950006</span><span class="p">,</span> <span class="n">final</span> <span class="n">lr</span> <span class="n">will</span> <span class="n">be</span> <span class="mf">3.51e-08</span>
+</pre></div>
+</div>
+<p>If everything works fine, you will see, on the screen, information printed every 1000 steps, like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>     <span class="mi">200</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">6.04</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>     <span class="mi">400</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.80</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>     <span class="mi">600</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.80</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>     <span class="mi">800</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.78</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">1000</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.77</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">saved</span> <span class="n">checkpoint</span> <span class="n">model</span><span class="o">.</span><span class="n">ckpt</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">1200</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.47</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">1400</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.49</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">1600</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.45</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">1800</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.44</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">batch</span>    <span class="mi">2000</span> <span class="n">training</span> <span class="n">time</span> <span class="mf">4.46</span> <span class="n">s</span><span class="p">,</span> <span class="n">testing</span> <span class="n">time</span> <span class="mf">0.02</span> <span class="n">s</span>
+<span class="n">DEEPMD</span> <span class="n">INFO</span>    <span class="n">saved</span> <span class="n">checkpoint</span> <span class="n">model</span><span class="o">.</span><span class="n">ckpt</span>
+</pre></div>
+</div>
+<p>They present the training and testing time counts. At the end of the 1000th batch, the model is saved in TensorFlow’s checkpoint file <code class="docutils literal notranslate"><span class="pre">model.ckpt</span></code>. At the same time, the training and testing errors are presented in file <code class="docutils literal notranslate"><span class="pre">lcurve.out</span></code>.</p>
+<p>The file contains 8 columns, form left to right, are the training step, the validation loss, training loss, root mean square (RMS) validation error of energy, RMS training error of energy, RMS validation error of force, RMS training error of force and the learning rate. The RMS error (RMSE) of the energy is normalized by number of atoms in the system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">2</span> <span class="n">lcurve</span><span class="o">.</span><span class="n">out</span>
+<span class="c1">#  step      rmse_val    rmse_trn    rmse_e_val  rmse_e_trn    rmse_f_val  rmse_f_trn         lr</span>
+      <span class="mi">0</span>      <span class="mf">2.02e+01</span>    <span class="mf">1.51e+01</span>      <span class="mf">1.37e-01</span>    <span class="mf">1.41e-01</span>      <span class="mf">6.40e-01</span>    <span class="mf">4.79e-01</span>    <span class="mf">1.0e-03</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tail -n 2 lcurve.out
+   9800      2.45e-02    4.02e-02      3.20e-04    3.88e-04      2.40e-02    3.94e-02    4.3e-08
+  10000      4.60e-02    3.76e-02      8.65e-04    5.35e-04      4.52e-02    3.69e-02    3.5e-08
+</pre></div>
+</div>
+<p>Volumes 4, 5 and 6, 7 present energy and force training and testing errors, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>DeePMD-kit_Tutorial/01.train.finished/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>lcurve.out<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>lcurve.out
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#  step      rmse_val    rmse_trn    rmse_e_val  rmse_e_trn    rmse_f_val  rmse_f_trn         lr
+      0      1.79e+01    2.26e+01      1.35e-01    1.33e-01      5.67e-01    7.15e-01    1.0e-03
+   9800      3.53e-02    2.64e-02      5.75e-04    3.01e-04      3.46e-02    2.59e-02    4.3e-08
+  10000      2.76e-02    2.25e-02      4.83e-04    1.62e-04      2.71e-02    2.21e-02    3.5e-08
+</pre></div>
+</div>
+</div>
+</div>
+<p>The loss function can be visualized to monitor the training process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./DeePMD-kit_Tutorial/01.train.finished/lcurve.out&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">lcurve</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;./DeePMD-kit_Tutorial/01.train.finished/lcurve.out&quot;</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span>
+<span class="p">)</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rmse_e_val&quot;</span><span class="p">,</span> <span class="s2">&quot;rmse_e_trn&quot;</span><span class="p">,</span> <span class="s2">&quot;rmse_f_val&quot;</span><span class="p">,</span> <span class="s2">&quot;rmse_f_trn&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">legend</span> <span class="ow">in</span> <span class="n">legends</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">lcurve</span><span class="p">[</span><span class="s2">&quot;step&quot;</span><span class="p">],</span> <span class="n">lcurve</span><span class="p">[</span><span class="n">legend</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">legend</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Training steps&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b5591609b13bd0b4d31102d14eb0df514eab3b67c4197d0edd5621e370258fc7.png" src="_images/b5591609b13bd0b4d31102d14eb0df514eab3b67c4197d0edd5621e370258fc7.png" />
+</div>
+</div>
+</section>
+<section id="freeze-a-model">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">3.3.4. </span>Freeze a model</a><a class="headerlink" href="#freeze-a-model" title="Link to this heading">#</a></h3>
+<p>At the end of the training, the model parameters saved in TensorFlow’s checkpoint file should be frozen as a model file that is usually ended with extension .pb. Simply execute</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Navigate to the DeePMD-kit_Tutorial/01.train/ Directory to Freeze the Model</span>
+<span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>DeePMD-kit_Tutorial/01.train.finished/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dp<span class="w"> </span>freeze<span class="w"> </span>-o<span class="w"> </span>graph.pb
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+DEEPMD WARNING The following nodes are not in the graph: {&#39;fitting_attr/aparam_nall&#39;, &#39;spin_attr/ntypes_spin&#39;}. Skip freezeing these nodes. You may be freezing a checkpoint generated by an old version.
+DEEPMD INFO    The following nodes will be frozen: [&#39;descrpt_attr/rcut&#39;, &#39;model_attr/model_version&#39;, &#39;o_atom_virial&#39;, &#39;model_attr/tmap&#39;, &#39;model_attr/model_type&#39;, &#39;o_force&#39;, &#39;o_energy&#39;, &#39;train_attr/min_nbor_dist&#39;, &#39;model_type&#39;, &#39;t_mesh&#39;, &#39;fitting_attr/daparam&#39;, &#39;train_attr/training_script&#39;, &#39;fitting_attr/dfparam&#39;, &#39;o_atom_energy&#39;, &#39;descrpt_attr/ntypes&#39;, &#39;o_virial&#39;]
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/entrypoints/freeze.py:370: convert_variables_to_constants (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.convert_variables_to_constants`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/entrypoints/freeze.py:370: convert_variables_to_constants (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.convert_variables_to_constants`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/framework/convert_to_constants.py:925: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.extract_sub_graph`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/framework/convert_to_constants.py:925: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.extract_sub_graph`
+DEEPMD INFO    1222 ops in the final graph.
+</pre></div>
+</div>
+</div>
+</div>
+<p>and it will output a model file named <code class="docutils literal notranslate"><span class="pre">graph.pb</span></code> in the current directory.</p>
+</section>
+<section id="compress-a-model">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">3.3.5. </span>Compress a model</a><a class="headerlink" href="#compress-a-model" title="Link to this heading">#</a></h3>
+<p>To enhance computational efficiency with DP models, compression significantly accelerates DP-based calculations and reduces memory usage. We can compress the model by running:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Navigate to the DeePMD-kit_Tutorial/01.train/ Directory to Compress the Model</span>
+<span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>DeePMD-kit_Tutorial/01.train.finished/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dp<span class="w"> </span>compress<span class="w"> </span>-i<span class="w"> </span>graph.pb<span class="w"> </span>-o<span class="w"> </span>compress.pb
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+DEEPMD INFO    
+
+
+DEEPMD INFO    stage 1: compress the model
+DEEPMD INFO     _____               _____   __  __  _____           _     _  _   
+DEEPMD INFO    |  __ \             |  __ \ |  \/  ||  __ \         | |   (_)| |  
+DEEPMD INFO    | |  | |  ___   ___ | |__) || \  / || |  | | ______ | | __ _ | |_ 
+DEEPMD INFO    | |  | | / _ \ / _ \|  ___/ | |\/| || |  | ||______|| |/ /| || __|
+DEEPMD INFO    | |__| ||  __/|  __/| |     | |  | || |__| |        |   &lt; | || |_ 
+DEEPMD INFO    |_____/  \___| \___||_|     |_|  |_||_____/         |_|\_\|_| \__|
+DEEPMD INFO    Please read and cite:
+DEEPMD INFO    Wang, Zhang, Han and E, Comput.Phys.Comm. 228, 178-184 (2018)
+DEEPMD INFO    Zeng et al, J. Chem. Phys., 159, 054801 (2023)
+DEEPMD INFO    See https://deepmd.rtfd.io/credits/ for details.
+DEEPMD INFO    installed to:         /root/miniconda3/envs/deepmd
+DEEPMD INFO    source :              v2.2.7
+DEEPMD INFO    source branch:         HEAD
+DEEPMD INFO    source commit:        839f4fe7
+DEEPMD INFO    source commit at:     2023-10-27 21:10:24 +0800
+DEEPMD INFO    build float prec:     double
+DEEPMD INFO    build variant:        cpu
+DEEPMD INFO    build with tf inc:    /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/include;/root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/../../../../include
+DEEPMD INFO    build with tf lib:    
+DEEPMD INFO    ---Summary of the training---------------------------------------
+DEEPMD INFO    running on:           bohrium-21213-1088639
+DEEPMD INFO    computing device:     cpu:0
+DEEPMD INFO    Count of visible GPU: 0
+DEEPMD INFO    num_intra_threads:    0
+DEEPMD INFO    num_inter_threads:    0
+DEEPMD INFO    -----------------------------------------------------------------
+DEEPMD INFO    training without frame parameter
+DEEPMD INFO    training data with lower boundary: [-0.92929175 -0.99957951]
+DEEPMD INFO    training data with upper boundary: [1.97058099 1.10195361]
+DEEPMD INFO    built lr
+DEEPMD INFO    built network
+DEEPMD INFO    built training
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+DEEPMD INFO    initialize model from scratch
+DEEPMD INFO    finished compressing
+DEEPMD INFO    
+
+
+DEEPMD INFO    stage 2: freeze the model
+DEEPMD WARNING The following nodes are not in the graph: {&#39;spin_attr/ntypes_spin&#39;, &#39;fitting_attr/aparam_nall&#39;}. Skip freezeing these nodes. You may be freezing a checkpoint generated by an old version.
+DEEPMD INFO    The following nodes will be frozen: [&#39;train_attr/min_nbor_dist&#39;, &#39;o_energy&#39;, &#39;descrpt_attr/rcut&#39;, &#39;o_force&#39;, &#39;model_type&#39;, &#39;fitting_attr/daparam&#39;, &#39;model_attr/tmap&#39;, &#39;o_atom_energy&#39;, &#39;descrpt_attr/ntypes&#39;, &#39;o_virial&#39;, &#39;t_mesh&#39;, &#39;model_attr/model_type&#39;, &#39;fitting_attr/dfparam&#39;, &#39;o_atom_virial&#39;, &#39;train_attr/training_script&#39;, &#39;model_attr/model_version&#39;]
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/entrypoints/freeze.py:370: convert_variables_to_constants (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.convert_variables_to_constants`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/entrypoints/freeze.py:370: convert_variables_to_constants (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.convert_variables_to_constants`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/framework/convert_to_constants.py:925: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.extract_sub_graph`
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/framework/convert_to_constants.py:925: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.extract_sub_graph`
+DEEPMD INFO    858 ops in the final graph.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-a-model">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">3.3.6. </span>Test a model</a><a class="headerlink" href="#test-a-model" title="Link to this heading">#</a></h3>
+<p>We can check the quality of the trained model by running</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>DeePMD-kit_Tutorial/01.train.finished/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dp<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-m<span class="w"> </span>graph.pb<span class="w"> </span>-s<span class="w"> </span>../00.data/validation_data
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/utils/batch_size.py:62: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices(&#39;GPU&#39;)` instead.
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/utils/batch_size.py:62: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices(&#39;GPU&#39;)` instead.
+DEEPMD WARNING You can use the environment variable DP_INFER_BATCH_SIZE tocontrol the inference batch size (nframes * natoms). The default value is 1024.
+DEEPMD INFO    # ---------------output of dp test--------------- 
+DEEPMD INFO    # testing system : ../00.data/validation_data
+DEEPMD INFO    # number of test data : 40 
+DEEPMD INFO    Energy MAE         : 1.473845e-03 eV
+DEEPMD INFO    Energy RMSE        : 2.007936e-03 eV
+DEEPMD INFO    Energy MAE/Natoms  : 2.947689e-04 eV
+DEEPMD INFO    Energy RMSE/Natoms : 4.015871e-04 eV
+DEEPMD INFO    Force  MAE         : 2.146239e-02 eV/A
+DEEPMD INFO    Force  RMSE        : 2.748797e-02 eV/A
+DEEPMD INFO    Virial MAE         : 2.879183e-02 eV
+DEEPMD INFO    Virial RMSE        : 3.817983e-02 eV
+DEEPMD INFO    Virial MAE/Natoms  : 5.758366e-03 eV
+DEEPMD INFO    Virial RMSE/Natoms : 7.635965e-03 eV
+DEEPMD INFO    # ----------------------------------------------- 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The correlation between predicted data and original data can also be calculated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dpdata</span>
+
+<span class="n">training_systems</span> <span class="o">=</span> <span class="n">dpdata</span><span class="o">.</span><span class="n">LabeledSystem</span><span class="p">(</span>
+    <span class="s2">&quot;./DeePMD-kit_Tutorial/00.data/training_data&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;deepmd/npy&quot;</span>
+<span class="p">)</span>
+<span class="n">predict</span> <span class="o">=</span> <span class="n">training_systems</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;./DeePMD-kit_Tutorial/01.train.finished/graph.pb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:To get the best performance, it is recommended to adjust the number of threads by setting the environment variables OMP_NUM_THREADS, TF_INTRA_OP_PARALLELISM_THREADS, and TF_INTER_OP_PARALLELISM_THREADS. See https://deepmd.rtfd.io/parallelism/ for more information.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/utils/batch_size.py:62: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices(&#39;GPU&#39;)` instead.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-03-24 23:05:17.177887: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-24 23:05:17.179243: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2024-03-24 23:05:17.197330: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:354] MLIR V1 optimization pass is not enabled
+WARNING:tensorflow:From /root/miniconda3/envs/deepmd/lib/python3.10/site-packages/deepmd/utils/batch_size.py:62: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices(&#39;GPU&#39;)` instead.
+WARNING:deepmd.utils.batch_size:You can use the environment variable DP_INFER_BATCH_SIZE tocontrol the inference batch size (nframes * natoms). The default value is 1024.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">training_systems</span><span class="p">[</span><span class="s2">&quot;energies&quot;</span><span class="p">],</span> <span class="n">predict</span><span class="p">[</span><span class="s2">&quot;energies&quot;</span><span class="p">])</span>
+
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">x_range</span><span class="p">,</span> <span class="s2">&quot;r--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Energy of DFT&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy predicted by deep potential&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+<img alt="_images/07724bd095ecf272d2466674295c993fa7c56eb92c9545c5718352f39501e29e.png" src="_images/07724bd095ecf272d2466674295c993fa7c56eb92c9545c5718352f39501e29e.png" />
+</div>
+</div>
+</section>
+<section id="run-md-with-lammps">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">3.3.7. </span>Run MD with LAMMPS</a><a class="headerlink" href="#run-md-with-lammps" title="Link to this heading">#</a></h3>
+<p>The model can drive molecular dynamics in LAMMPS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ls
+<span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./DeePMD-kit_Tutorial/02.lmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>../01.train.finished/graph.pb<span class="w"> </span>./<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeePMD-kit_Tutorial
+<span class=" -Color -Color-Bold -Color-Bold-Blue">.</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Green">ch4.dump</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Green">conf.lmp</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Green">graph.pb</span>
+├── <span class=" -Color -Color-Bold -Color-Bold-Green">in.lammps</span>
+└── log.lammps
+
+0 directories, 5 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">conf.lmp</span></code> gives the initial configuration of a gas phase methane MD simulation, and the file <code class="docutils literal notranslate"><span class="pre">in.lammps</span></code> is the LAMMPS input script. One may check in.lammps and finds that it is a rather standard LAMMPS input file for a MD simulation, with only two exception lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pair_style</span>  <span class="n">deepmd</span> <span class="n">graph</span><span class="o">.</span><span class="n">pb</span>
+<span class="n">pair_coeff</span>  <span class="o">*</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>where the pair style deepmd is invoked and the model file <code class="docutils literal notranslate"><span class="pre">graph.pb</span></code> is provided, which means the atomic interaction will be computed by the DP model that is stored in the file <code class="docutils literal notranslate"><span class="pre">graph.pb</span></code>.</p>
+<p>In an environment with a compatibable version of LAMMPS, the deep potential molecular dynamics can be performed via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lmp<span class="w"> </span>-i<span class="w"> </span>input.lammps
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./DeePMD-kit_Tutorial/02.lmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>lmp<span class="w"> </span>-i<span class="w"> </span><span class="k">in</span>.lammps
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LAMMPS (2 Aug 2023 - Update 1)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from /root/miniconda3/envs/deepmd/lib/deepmd_lmp
+Reading data file ...
+  triclinic box = (0 0 0) to (10.114259 10.263124 10.216793) with tilt (0.036749877 0.13833062 -0.056322169)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  5 atoms
+  read_data CPU = 0.002 seconds
+DeePMD-kit WARNING: Environmental variable OMP_NUM_THREADS is not set. Tune OMP_NUM_THREADS for the best performance. See https://deepmd.rtfd.io/parallelism/ for more information.
+Summary of lammps deepmd module ...
+  &gt;&gt;&gt; Info of deepmd-kit:
+  installed to:       /root/miniconda3/envs/deepmd
+  source:             v2.2.7
+  source branch:       HEAD
+  source commit:      839f4fe7
+  source commit at:   2023-10-27 21:10:24 +0800
+  surpport model ver.:1.1 
+  build variant:      cpu
+  build with tf inc:  /root/miniconda3/envs/deepmd/include;/root/miniconda3/envs/deepmd/include
+  build with tf lib:  /root/miniconda3/envs/deepmd/lib/libtensorflow_cc.so
+  set tf intra_op_parallelism_threads: 0
+  set tf inter_op_parallelism_threads: 0
+  &gt;&gt;&gt; Info of lammps module:
+  use deepmd-kit at:  /root/miniconda3/envs/deepmdDeePMD-kit WARNING: Environmental variable OMP_NUM_THREADS is not set. Tune OMP_NUM_THREADS for the best performance. See https://deepmd.rtfd.io/parallelism/ for more information.
+2024-03-24 23:05:49.768736: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-24 23:05:49.770401: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2024-03-24 23:05:49.817983: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:354] MLIR V1 optimization pass is not enabled
+INVALID_ARGUMENT: Tensor spin_attr/ntypes_spin:0, specified in either feed_devices or fetch_devices was not found in the Graph
+  &gt;&gt;&gt; Info of model(s):
+  using   1 model(s): graph.pb 
+  rcut in model:      6
+  ntypes in model:    2
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Your simulation uses code contributions which should be cited:
+- USER-DEEPMD package:
+The log file lists these citations in BibTeX format.
+
+CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
+
+Generated 0 of 1 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 10 steps, delay = 0 steps, check = no
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 7
+  ghost atom cutoff = 7
+  binsize = 3.5, bins = 3 3 3
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair deepmd, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : metal
+  Current step  : 0
+  Time step     : 0.001
+Per MPI rank memory allocation (min/avg/max) = 2.559 | 2.559 | 2.559 Mbytes
+   Step         PotEng         KinEng         TotEng          Temp          Press          Volume    
+         0  -219.77409      0.025852029   -219.74824      50            -799.80566      1060.5429    
+       100  -219.77101      0.02250472    -219.7485       43.526023     -563.15562      1060.5429    
+       200  -219.77525      0.025722761   -219.74953      49.749984     -55.768826      1060.5429    
+       300  -219.78111      0.030123111   -219.75098      58.260632      415.50143      1060.5429    
+       400  -219.78545      0.03264184    -219.7528       63.132067      724.77655      1060.5429    
+       500  -219.7897       0.034591934   -219.75511      66.903712      664.01323      1060.5429    
+       600  -219.78944      0.031599794   -219.75784      61.116661      307.82983      1060.5429    
+       700  -219.78389      0.023121639   -219.76076      44.719197     -166.66606      1060.5429    
+       800  -219.77712      0.013122374   -219.764        25.379775     -493.10259      1060.5429    
+       900  -219.7791       0.011293959   -219.76781      21.843468     -609.86395      1060.5429    
+      1000  -219.78712      0.01531002    -219.77181      29.610866     -422.5828       1060.5429    
+      1100  -219.7939       0.018709632   -219.77519      36.186003     -61.443156      1060.5429    
+      1200  -219.79395      0.016606919   -219.77734      32.11918       331.62678      1060.5429    
+      1300  -219.79132      0.012642575   -219.77868      24.451803      505.6361       1060.5429    
+      1400  -219.79314      0.013255468   -219.77989      25.637191      381.73541      1060.5429    
+      1500  -219.79509      0.014397006   -219.78069      27.845022      48.696022      1060.5429    
+      1600  -219.79313      0.012485864   -219.78064      24.148711     -302.67659      1060.5429    
+      1700  -219.78841      0.0085717658  -219.77983      16.578516     -476.08062      1060.5429    
+      1800  -219.78663      0.0081557171  -219.77847      15.773843     -407.83792      1060.5429    
+      1900  -219.78715      0.010996426   -219.77615      21.268013     -98.699573      1060.5429    
+      2000  -219.78836      0.016278673   -219.77209      31.484324      293.02315      1060.5429    
+      2100  -219.78819      0.022161035   -219.76603      42.861306      587.40225      1060.5429    
+      2200  -219.79165      0.031838471   -219.75981      61.578284      543.58893      1060.5429    
+      2300  -219.79343      0.038239208   -219.75519      73.957846      104.54643      1060.5429    
+      2400  -219.78301      0.031060153   -219.75195      60.072951     -293.72903      1060.5429    
+      2500  -219.77209      0.022352657   -219.74974      43.231919     -606.61353      1060.5429    
+      2600  -219.76604      0.017305685   -219.74873      33.47065      -623.66583      1060.5429    
+      2700  -219.77552      0.026563069   -219.74895      51.375211     -332.34033      1060.5429    
+      2800  -219.78594      0.0362724     -219.74967      70.153875      120.73427      1060.5429    
+      2900  -219.78868      0.038558744   -219.75012      74.575856      542.93567      1060.5429    
+      3000  -219.78351      0.03281317    -219.75069      63.463433      746.24646      1060.5429    
+      3100  -219.78106      0.028937414   -219.75212      55.967395      583.87016      1060.5429    
+      3200  -219.77929      0.025275432   -219.75402      48.884814      128.24387      1060.5429    
+      3300  -219.77781      0.022017978   -219.75579      42.584622     -395.55332      1060.5429    
+      3400  -219.77696      0.019305132   -219.75765      37.33775      -679.74745      1060.5429    
+      3500  -219.78369      0.023714356   -219.75997      45.86556      -656.9891       1060.5429    
+      3600  -219.79244      0.030071312   -219.76237      58.160448     -354.34542      1060.5429    
+      3700  -219.79168      0.027557568   -219.76412      53.298657      199.00964      1060.5429    
+      3800  -219.78639      0.021137515   -219.76525      40.881734      596.54224      1060.5429    
+      3900  -219.77923      0.012972221   -219.76626      25.089367      713.41996      1060.5429    
+      4000  -219.78185      0.014202505   -219.76765      27.46884       430.83529      1060.5429    
+      4100  -219.78477      0.016041208   -219.76872      31.025047     -28.605377      1060.5429    
+      4200  -219.78545      0.016332231   -219.76912      31.587909     -457.5328       1060.5429    
+      4300  -219.78602      0.016882726   -219.76914      32.652612     -608.55966      1060.5429    
+      4400  -219.78949      0.020680419   -219.76881      39.99767      -456.72943      1060.5429    
+      4500  -219.79121      0.023411938   -219.7678       45.280658     -79.406734      1060.5429    
+      4600  -219.7882       0.022574198   -219.76562      43.660398      414.11955      1060.5429    
+      4700  -219.78521      0.022736692   -219.76248      43.974676      663.73939      1060.5429    
+      4800  -219.7834       0.025050214   -219.75835      48.449222      598.39611      1060.5429    
+      4900  -219.78291      0.030199797   -219.75271      58.408949      203.75805      1060.5429    
+      5000  -219.77611      0.030245158   -219.74586      58.496682     -300.80549      1060.5429    
+Loop time of 38.8363 on 1 procs for 5000 steps with 5 atoms
+
+Performance: 11.124 ns/day, 2.158 hours/ns, 128.746 timesteps/s, 643.728 atom-step/s
+104.3% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 38.703     | 38.703     | 38.703     |   0.0 | 99.66
+Neigh   | 0.0079815  | 0.0079815  | 0.0079815  |   0.0 |  0.02
+Comm    | 0.0334     | 0.0334     | 0.0334     |   0.0 |  0.09
+Output  | 0.0065195  | 0.0065195  | 0.0065195  |   0.0 |  0.02
+Modify  | 0.070599   | 0.070599   | 0.070599   |   0.0 |  0.18
+Other   |            | 0.01491    |            |       |  0.04
+
+Nlocal:              5 ave           5 max           5 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:            130 ave         130 max         130 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:           20 ave          20 max          20 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 20
+Ave neighs/atom = 4
+Neighbor list builds = 500
+Dangerous builds not checked
+Total wall time: 0:00:39
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="background.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Theoretical Background</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3.2. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">3.3. Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3.3.1. Data Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-input-script">3.3.2. Prepare input script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-model">3.3.3. Train a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#freeze-a-model">3.3.4. Freeze a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-a-model">3.3.5. Compress a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-a-model">3.3.6. Test a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-md-with-lammps">3.3.7. Run MD with LAMMPS</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By C.L. Qin
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, C.L. Qin.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
